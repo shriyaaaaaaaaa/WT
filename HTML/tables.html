@@ -12,6 +12,13 @@
 </head>
 <body>
     <table border ="1" width ="40%" height="50%">
+
+        <thead> <!--creates seperate table header-->
+            <tr>
+                <th colspan="3">this is head of the table</th>
+            </tr>
+        </thead>
+        <tbody>
         <tr>  <!--creates table row-->
             <th>First name</th>   <!--table heading-->
             <th>Last name</th>   <!--table heading-->
@@ -29,8 +36,13 @@
             <td>KC</td>
             <td>7</td>
         </tr>
+    </tbody>
 
-    
+    <tfoot>
+        <tr>
+            <th colspan="4">this is foot of the table</th>
+        </tr>
+    </tfoot>
     </table>
 </body>
 </html>
