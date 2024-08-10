@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe eg</title>
+</head>
+<body>
+    <h2>embedding a webpage using a iframe</h2>
+
+    <iframe src="https://www.wikipedia.org" width="500" height="400" title="wikipedia" name="iframe_a"></iframe>
+
+<p> This iframe embeds the Wikipedia homepage within this webpage.</p>
+
+<p><a href="https://www.example.com" target="iframe_a">example.com</a></p>
+<br>
+<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
+
+</body>
+</html>
+
+
+<!--Iframe Setup:
+
+src="https://www.wikipedia.org" loads Wikipedia into the iframe.
+name="iframe_a" assigns a name to the iframe so that links can target it.
+
+Link Targeting Iframe:
+<a href="https://www.example.com" target="iframe_a">example.com</a>:
+ This link will load example.com into the iframe when clicked, replacing the Wikipedia page.
+This code will display the Wikipedia homepage inside the iframe, and when the "example.com" link is clicked, 
+it will replace the content in the iframe with the example.com homepage.-->
