@@ -1,0 +1,39 @@
+<!--write a script to display a msg "hello world onkeypress event"-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard event</title>
+
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #message{
+            margin-top: 10px; /*space above msg*/
+            font-size: 40px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>press any key</h3>
+    <div id="message"></div>
+
+    <script>
+        function displayMessage()
+        {
+            const MessageDiv=document.getElementById('message');
+            MessageDiv.textContent="Hello World ";
+        }
+            document.addEventListener('keypress' ,displayMessage);
+        
+    </script>
+    
+</body>
+</html>

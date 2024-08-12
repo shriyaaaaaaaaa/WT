@@ -1,0 +1,49 @@
+<!--drawing a circle using a canvas-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circle using canvas</title>
+
+    <style>
+        canvas{
+        border: 1px solid black;
+        margin:20px;
+        align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" height="200" width="400"></canvas>
+    <script>
+       // gets the canvas element
+        const canvas=document.getElementById('mycanvas');
+
+        //get the drawing context
+        const ctx=canvas.getContext('2d');
+
+        //sets the circle properties
+        const centerX=canvas.width /2; //X-coordinate for the center of circle
+        const centerY=canvas.height/2; //Y-coordinate for the center of circle
+        const radius=50; //radius of circle
+
+        //begin a new path for circle
+        ctx.beginPath();
+
+        //create the circle
+        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);//(X,Y,RADIUS,STARTANGLE,ENDANGLE)
+    
+        //set the stroke color
+        ctx.strokeStyle= 'red';
+
+        //draw the circle outline
+        ctx.stroke();
+
+        //optionally fill the circle
+        ctx.fillStyle='lightblue';
+        ctx.fill();
+    </script>
+</body>
+</html>

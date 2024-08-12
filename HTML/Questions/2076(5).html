@@ -1,0 +1,53 @@
+<!--create a HTML page w tags header, footer,article. insert a link containing mail to info@iost.edu.np
+in the footer tag. set the keywords "iost","csit" using Meta tag in the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="iost,csit">
+    <title>HTML page</title>
+
+    <style>
+        body {
+            
+            font-size: medium;
+            font-family: sans-serif;
+            margin:0;
+            padding:0;
+        }
+        header{
+            background: black;
+            color: white;     /*text color*/
+            padding:10px ; /*padding inside header*/
+            text-align: center; /*align text to center*/
+        }
+        article{
+            padding: 20px;
+        }
+        footer{
+            background: rgb(29, 186, 244);
+            color: white;     /*text color*/
+            padding: 10px ;
+            bottom:0; /*stay at bottom*/
+            
+        }
+
+    </style>
+</head>
+<body>
+    <article>
+    <header>
+        <h1>this is the title of article</h1>
+        <p>some additional info here....</p>
+    </header>
+    <p>some text here...</p>
+        
+    </article>
+    <footer>
+        <p>contact information: <a href="info@iost.edu.np">iostmail</a> </p>
+    </footer>
+    
+</body>
+</html>
