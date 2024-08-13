@@ -1,0 +1,58 @@
+<!--explains relationship between selector-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>combinator sleector</title>
+     <style>
+         /*descendent selector*/
+        div p{
+            color: blue;
+            text-align: center;
+        }
+        /*child selecter (>)*/
+        div > ul{
+            color: red;
+            text-align: center;
+        }
+        /*adjacent-sibling selector(+)*/
+        h5 + h4{
+            color: green;
+            
+        }
+        /*general sibling selector(~) */
+        h1 ~ h2 {
+            color: blueviolet;
+        }
+
+
+     </style>
+</head>
+<body>
+    <div>
+        <p> descendent selector selects all < p > element inside < div > element </p>
+        <p>matches all element that are descendent of specified element.</p>
+    </div>
+
+    <div>
+        <ul>child selector
+        <li>it selects all the element that are children of specified element.</li>
+        <li>in this case selects all < ul > element that are eg of div element.</li>
+        </ul>
+    </div>
+
+    
+        <h5>adjacent sibling selects the element(< h4 >) that is directly after another specified element (< h5 > . </h5>
+        <h4>this is green since it is specified in element followed by h5 element</h4>
+        <h4>but again this is not green</h4>
+        <!--Styles the first <h4> that immediately follows an <h5>, changing its color to green.-->
+    
+         <h1>general sibling selector</h1>
+         <h2>selects all the element that are next sibling of specified element.</h2>
+         <h2>selects all the element that are next sibling of specified element.</h2>
+         <!--Styles all <h2> elements that follow an <h1> element in the document, changing their color to blueviolet.-->
+         
+</body>
+</html>

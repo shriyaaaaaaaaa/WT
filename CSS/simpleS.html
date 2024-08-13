@@ -1,0 +1,79 @@
+<!--simple selector selects element based on id,class,name.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple selector CSS</title>
+
+    <style>
+        /* element selector */
+        h3{             
+            text-align: center;
+            color: blue;
+        }
+
+        /*id selector*/
+        #para1{
+            text-align: center;
+            color: brown;
+        }
+
+        /*class selector*/
+        .para{
+            text-align: center;
+            color: red;
+        }
+
+        /*we can define only specific HTML element should be affected by a class*/
+        p.center{
+            color: chocolate;
+        }
+
+        /*universal selector*/
+        *{
+            text-align: center;
+            color: black;
+        }
+         /*grouping selector*/
+         h1,h2 {
+            text-align: center;
+            color: green;
+         }
+    </style>
+</head>
+<body>
+    
+        <h3>this is element selector</h3>
+        <h3>All < h3 > elements in the HTML document will have blue text.</h3>
+
+        <p id="para1">id selector is used to select one unique element. only this para is brown.</p>
+
+        <p class="para">class selecter is used to specify a style for group of elements.</p>
+
+       <!--or we can use this. but since we have defined for all element should have black so this might showblack text in this code
+        <div class="para">
+            <p>the class selector used the HTML class attribute and is defined by dot symbol followed by class name.</p>
+        </div> -->
+
+        <!--<div id="para1">
+            <p>just checking</p>
+        </div> -->
+
+        <p class="center">the font color is chocolate. don't use div method.</p>
+
+        <p>just universal element eg.</p> 
+        <h5>universal selector selects all html elements on page </h5>
+
+        <h1>this is grouping selector</h1>
+        <h2>the texts are green and we can put other elements like p in grouping too.</h2>
+
+        
+        
+
+
+
+
+</body>
+</html>

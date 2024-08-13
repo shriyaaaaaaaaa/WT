@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Class Selector CSS</title>
+
+    <style>
+        /* Change the background color of div when hovered */
+        div:hover {
+            background-color: red; /* Change color of div when hovered */
+        }
+
+        /* Visited link */
+        a:visited {
+            color: blue; /* Color for visited links */
+            text-decoration: none; 
+        }
+
+        /* Unvisited link */
+        a:link {
+            color: brown; /* Color for unvisited links */
+            text-decoration: underline; 
+        }
+
+        /* Hover and active states */
+        a:hover {
+            color: green; /* Color for link on hover */
+        }
+
+        a:active {
+            color: orange; /* Color when the link is clicked */
+        }
+
+        .highlight {
+            text-align: center;
+            color: black;
+            margin: 20px 0; /* Add some space above and below */
+        }
+
+        /* Highlight hover effect on the link within the highlight class */
+        .highlight a:hover {
+            background-color: yellow; /* Background color for link on hover */
+            color: black; /* Change text color for better contrast */
+            padding: 5px; /* Add some padding to the link */
+            border-radius: 5px; /* Rounded corners for the hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>When you hover over this, it will change color to red</h1>
+        <p>Hover your cursor over the <strong>div</strong> element.</p>
+    </div>
+    
+    <p>This is an example of a <a href="https://chatgpt.com/" target="_blank">visited link</a>.</p>
+    <p>This is an example of an <a href="https://www.serializd.com/" target="_blank">unvisited link</a>.</p>
+
+
+    <!--add comment on div:hover in style to make this  one work-->
+    <div class="highlight">
+        <p>Pseudo-classes can be combined with HTML classes:
+            • When you hover over the link in the example, it will change color:</p>
+        <a href="https://letterboxd.com/blueshriya/" target="_blank">Visit Letterboxd</a>
+    </div>
+</body>
+</html>

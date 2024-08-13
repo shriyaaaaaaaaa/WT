@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo element CSS</title>
+    <style>
+        p::first-letter{
+            color: red;
+            font-size: medium;
+        }
+        p::first-line{
+            color:blue;
+            font-size: large;
+        }
+        .intro{
+            font-family: sans-serif;
+            color:chartreuse;
+        }
+        h1.intro::first-letter{
+            color:blueviolet;
+        }
+
+        h2::before{
+            content: url(https://example.com/path-to-your-image.png);
+            content: "★ ";
+            width: 50px;
+            height:50px;
+        }
+        h2::after{
+            content: "**";
+
+        }
+        ::marker{
+          
+            content: "★ "; /* Custom content for the marker */
+            color: gold;
+        }
+        ::selection{
+            color:crimson;
+        }
+
+        a[target]{
+            background-color: darkorange;
+        }
+        a[target="_parent"]{
+            background-color: aqua;
+        }
+        [title~="flower"]{
+            border: 2px solid black;
+            color:red;
+
+        }
+        [attribute^="top"]
+         { background: yellow; }
+
+         [class$="test"] 
+         { background: yellow; }
+
+         [just*="te"] {
+             background: yellow; }
+
+        [only|="top"] 
+        { background: yellow; }
+
+
+    </style>
+</head>
+<body>
+    <p>formats first line and letter of  text in all <strong>p</strong> element</p>
+    <p>checking</p>
+
+    <h1 class="intro" >html classes can be combined with pseudo element</h1>
+
+    <h2>adds the content before the content of element.</h2>
+
+    <ol>
+        <li>The ::marker pseudo-element selects the markers of list items.</li>
+    </ol>
+    <li>checking...</li>
+    <p>The ::selection pseudo-element matches the portion of an element that is selected by a user. just select the this text</p>
+
+    <a href="https://chatgpt.com/" target="_blank">chatgpt.Open in new tab</a>
+    <a href="https://chatgpt.com/" target="_parent">chatgpt.Open in Parent Frame</a>
+
+    <p title="blah blah flower">The [attribute ~ = value ] selector is used to select elements with an attribute value containing a specified word."></p>
+
+    <p attribute="top just in start">selects all elements with a  attribute value that starts with "top"</p>
+
+    <p class="end in test">selects all elements with a class attribute value that ends with "test"</p>
+
+    <p just="teamo">selects all elements with a class attribute value that contains "te"</p>
+
+    <p only="top">The value has to be a whole word, either alone, like only="top", or followed by a hyphen( - ), like only="top-text".</p>
+
+
+
+
+    
+</body>
+</html>
