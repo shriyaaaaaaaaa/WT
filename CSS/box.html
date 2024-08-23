@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS box</title>
+</head>
+<style>
+    .box1{
+        width: 400px;
+        height:100px;
+        border: 1px solid blue;
+        padding-top:20px;
+        padding-bottom:50px;
+        padding-right:55px;
+        padding-left:30px;
+        margin:auto;/* Automatically sets equal left and right margins */
+        float:right; /*moves far as left or right as it can*/
+        box-shadow:5px 5px 5px red; /*to the right, bottom, then blur, blur color*/
+    }
+    .box2{
+        width:400px;
+        height:200px;
+        border:1px dotted red;
+        margin-top:60px;
+        margin-bottom:60px;
+        margin-right:50px;
+        margin-left:60px;
+        float:right; /*see how it gives the needed space for box1*/
+        clear:both; /*this clear prevents theat from happening */
+        
+    }
+</style>
+<body>
+    <div class="box1">
+        <h4>css box model</h4>
+        <p>padding is area around the content area and within the border box</p>
+    </div>
+    <div class="box2">
+        <p>margin is space between border and margin. waripari ko area sanga.</p>
+    </div>
+
+    <p style="display: inline;">
+        this paragraph will inline with the next paragraph
+    </p>
+    <p style="display: inline;">
+        and will make a single line
+    </p>
+    <p style="display:block;">
+        this paragraph will be seperate from next paragraph
+    </p>
+    <p style="display:block">
+        and this is second paragraph
+    </p>
+    <p style="display:none">
+        as if the element is not there. visibility is hidden.
+    </p>
+    
+</body>
+</html>

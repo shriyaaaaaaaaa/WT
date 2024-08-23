@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS table</title>
+
+    <style>
+        table.one{
+            border-collapse: collapse;
+            height:70px;
+            width:50%;
+            text-align: center; /*text in center of cell*/
+            
+            
+            
+            
+            
+        }
+        table.two{
+            border-collapse: separate;
+            border-spacing:10px;  /*space beetween borders. used in seperate only*/
+        }
+        td.a{
+            border:1px solid red; /*all property in one*/
+        }
+        td.b{
+            border:2px dashed blue;
+        }
+        tr:hover{
+            background-color: aqua; /*when mouse touches row */
+        }
+    </style>
+</head>
+<body>
+    
+    <table class="one" >
+        <caption>border collapse</caption>
+        <tr>
+            <td class ="a">cell A collapse</td>
+            <td class="a">lets see</td>
+            <td class="b">all in same row</td>
+        </tr>
+        <tr>
+            <td class="b">diff row</td> 
+            <td class="a">anything possible</td>
+        </tr>
+    </table>
+    <br>
+    <table class="two" border="1"> <!--used in seperate to add another outer border. if used in collapse it adds extra cell-->
+        <caption>seperate border eg</caption> <!--by default above the document-->
+        <tr>
+            <td class="a">cell a seperate</td>
+            <td class="b">cell b seperate</td>
+        </tr>
+        <tr>
+            <td class="b">seperate</td>
+            <td class="a">seperate</td>
+        </tr>
+
+    </table>
+    
+    
+    
+</body>
+</html>

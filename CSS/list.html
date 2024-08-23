@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS list</title>
+</head>
+<body>
+    <ul style="list-style-type:default; list-style-position: none;">
+        <li>default is filled in circle</li>
+        <li>without position style all this will be in same start pos </li>
+
+    </ul>
+    <ul style="list-style-type: circle; list-style-position: inside;">
+        <li>unfilled circle</li>
+    </ul>
+    <ul style="list-style-type: square;">
+        <li>filled square</li>
+    </ul>
+    <ol style="list-style-type: decimal; list-style-position: outside;">
+        <li>starts with one</li>
+        <li>use decimal leading one to start like 01,02,03</li>
+    </ol>
+    <ol style="list-style-type: lower-alpha;">
+        <li>lowercase alphanumerical char</li>
+        <li>can use upper-alpha</li>
+    </ol>
+    <ol style="list-style-type: upper-roman;">
+        <li>uppercase roman numerals</li>
+        <li>can use lower-roman</li>
+    </ol>
+    <ol style="list-style-type: lower-greek; padding-left:50px;">
+        <li>alpha, greek,gamma natak</li>
+        <li>alpha bhaneko abc wala ani greek chai roman</li>
+    </ol>
+    <!--we can specify all list properties into a single expression-->
+    <ul style="list-style: square inside; padding:50px;">
+        <li>pos/type first any will do</li>
+        
+    </ul>
+    <ol>
+        <li style="list-style-image: url('path/to/image.png');">before this some image will appear as bullet point</li>
+        <li>in this default marker appears</li>
+        <li>we can aso use this property on style and then do < ol class=""  > and call it</li>
+    </ol>
+</body>
+</html>

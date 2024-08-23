@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS text</title>
+</head>
+<style>
+    p.text-align{  /*horizontal align the text*/
+        text-align: center;  
+        text-align: justify; /*text align to both the left and right edges of the paragraph,
+                               with space between words adjusted to ensure the text spans the entire line.*/
+        text-align: left;
+        text-align: right;
+
+    
+    }
+    p.verticle-align{
+
+    }
+    p.text-decoration{
+        text-decoration: underline; /*underline the text*/
+        text-decoration:overline;
+        text-decoration: line-through; /*cut right through*/
+        text-decoration: underline line-through overline; /* can use couple only*/
+        text-decoration-color: aqua;
+    }
+    p.direction{
+        direction: ltr;
+        direction: rtl;
+    }
+    p.letter-spacing{
+        letter-spacing: 10px; /*increase space between letters*/
+        letter-spacing: -2px;;
+    }
+    p.word-spacing{
+        word-spacing: 5px;
+        word-spacing: -5px;
+    }
+    p.text-transform{
+        text-transform: uppercase; /*convert to uppercase*/
+        text-transform: lowercase;
+    }
+    p.white-space{
+        font-size: xx-large;
+        white-space: normal;  /*Text will wrap normally, and multiple spaces are collapsed into a single space*/
+        white-space: nowrap; /*it means that text will continue w/o going on next line also mulitple space collapses to one*/
+        white-space: pre; /*exactly how it's written w space and all and doesnot go on next line*/
+        white-space: pre-wrap; /*text wraps but whitespace is preserved*/
+        white-space: pre-line; /*whitespace is collpased but linebreak preserves also wraps*/
+        
+    }
+    p.text-shadow{
+        text-shadow: 3px 5px 6px red; /*text shadow with to right,down ,blur , glow radiusproperty*/
+    }
+</style>
+<body>
+    <p style="color:red;">color sets the text color and we can use style like this too</p>
+    <p style="text-indent:50%">indent the first line that is 30 px space when starting a paragaph but then text continues from the leftmost corner, can a;lso use px. </p>
+    <p class="text-align">horizontal align the text</p>
+    <p class="text-decoration">underline, overline,strikethrough the text</p>
+    <p class="direction">the text flows form left to right or right to left</p>
+    <p class="letter-spacing">increase or decrease space between letters</p>
+    <p class="word-spacing">increase or decrease space between words</p>
+    <p class="text-transform">convert entire text to either uppercase or lowercase</p>
+    <p class="white-space">control    the    flow and a hr uvwfr
+         veubicanopxQNQIWV ECGEFABDNsan bvgsfhbjadnMANbvgsdfhbjankM  formatting of the text</p>
+    <p class="text-shadow">sets text shadow around the text</p>
+
+
+</body>
+</html>

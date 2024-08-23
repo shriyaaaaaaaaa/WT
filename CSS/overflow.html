@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS overflow</title>
+</head>
+<style>
+    div.visible{
+        border:1px solid black;
+        width: 300px;
+        height:80px;
+        background-color: aqua;
+        overflow: visible; /*by default*/
+    
+    }
+    div.hidden{
+        border:1px;
+        width:200px;
+        height:60px;
+        overflow:hidden;
+        background-color: blanchedalmond;
+        float:right;
+    }
+    div.scroll{
+        border:1px;
+        width:300px;
+        height:60px;
+        overflow:scroll;
+        overflow:auto; /*similar to scroll but adds when necessary like only horizontal scroll is necessary here*/
+        background-color: blanchedalmond;
+    }
+    div.overflow{
+        overflow-x: hidden; /*for horizontal*/
+        overflow-y: scroll; /*for verticle*/
+        border:1px;
+        width:300px;
+        height:60px;
+        background-color: blanchedalmond;
+        float:right;
+        clear:both;
+
+    }
+
+    
+</style>
+<body>
+    <div class="visible">
+        <p>The CSS overflow property controls what happens to content that is too big to fit into an area.
+            By default, the overflow is visible, meaning that it is not clipped and it renders outside the element's box:
+        </p>
+    </div>
+    
+    
+    <div class="hidden">
+        <p>With the hidden value, the overflow is clipped, and the rest of the content is hidden:</p>
+    </div>
+    <br>
+    <br>
+    <div class="scroll">
+        <p>Setting the value to scroll, the overflow is clipped and a scrollbar is added to scroll inside the box. 
+            Note that this will add a scrollbar both horizontally and vertically (even if you do not need it)
+        if we use "auto" then only needed scroll will be put</p>
+    </div>
+    <div class="overflow">
+        <p>The overflow-x and overflow-y properties specifies whether to change the overflow of content just horizontally or vertically (or both):
+            overflow-x specifies what to do with the left/right edges of the content.i.e horizontal scrollbar
+            overflow-y specifies what to do with the top/bottom edges of the content i.e verticle scrollbar</p>
+
+    </div>
+    
+</body>
+</html>

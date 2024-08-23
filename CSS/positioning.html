@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS positioning</title>
+</head>
+<style>
+     div.static{
+        position: static;
+        border:3px dashed red;
+        
+    }
+    div.relative{
+        position: relative;
+        left:20px; /*can only use left and top value*/
+        top:30px;
+        border:1px dotted blue;
+    }
+    div.absolute{
+        position: absolute; 
+        left:50px;
+        top:50px;
+    }
+    div.fixed{
+        position: fixed;
+        left:80px;
+        top:200px;
+    }
+</style>
+<body>
+    <div class="static">
+        <p>positioned static by default. normal flow of page</p>
+        
+    </div>
+    <div class="relative">
+        <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.
+              Other content will not be adjusted to fit into any gap left by the element. also whole border ko position ho.</p>
+    </div>
+    <div class="absolute">
+        <p>absolute is positioned at the specifies coordinates relative to your screen top left corner</p>
+    </div>
+    <div class="fixed">
+        <p>allows to fix the position of element to a particular spot on the page, regardless of sscrolling</p>
+    </div>
+</body>
+</html>
