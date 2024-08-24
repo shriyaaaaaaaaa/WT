@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>external css and html</title>
+    <!--<link rel="stylesheet" type="text/css" href="mystyle.css"-->
+</head>
+<style>
+    .content{
+        position:fixed;
+        border-style:solid;
+        border:2px solid black/*can write width instead of border apparently*/
+    }
+    #p1{
+        position: relative;
+        font-family: arial;
+        color: red;
+
+    }
+    #p2{
+        position: absolute;
+        top:0px;
+        left:200px;
+    }
+</style>
+<body>
+    <div class="content">
+        <p id="p1">relative position red color</p>
+        <p id="p2">absolute position</p>
+    </div>
+    
+</body>
+</html>
