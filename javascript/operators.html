@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS OPERATORS</title>
+</head>
+<body>
+    <script type="text/javascript">
+        {
+            document.writeln("<h3>arithmentic operators.</h3>");
+            document.writeln(2+5 +" addition operator <br>"); 
+            document.writeln(5-2+ " subtraction <br>");
+            document.writeln(5*2+ " multiplication <br>");
+            document.writeln(5/2.5+ " division <br>");
+            document.writeln(5%2+ " modulus <br>");
+            document.writeln(5**4+ " exponentiation <br>"); //5 ko power 4
+            var a=10;
+            document.writeln(--a +" decrement <br>");
+            document.writeln(++a +" increment <br>"); //9 from decr ko incr huda 10 nai huncha  
+        
+        
+            document.writeln("<h3>comparison operators.</h3>");
+            document.writeln((5==5) +" == is equal to <br>")
+            document.writeln((5!=5) + "!= inequality operator <br>");
+            document.writeln((7>5) + " > greater than <br>");
+            document.writeln((7<8)+ " < less than <br>");
+            document.writeln((45>=70) +">= greater than and equal to <br>");
+            document.writeln((45<=70) + "<= less than and equal to <br>");
+            document.writeln((32===32.1)+" === is equal to and of same type <br>");
+            document.writeln((a!==7) +" !== isnot equal to and of same type <br>");
+
+
+            document.writeln("<h3>assignment operators.</h3>");
+            document.writeln((a=4) +" = assign <br>");
+            document.writeln((a+=2) +" a=a+2 i.e add and assign <br>");
+            document.writeln((a-=3)+ " a=a-3 i.e sub and assign <br>");
+            document.writeln((a*=4)+ " a=a*4 i.e mul and assign <br>");
+            document.writeln((a/=2)+ " a=a/2 i.e div and assign <br>");
+            document.writeln((a%=3)+ " a=a%3 i.e mod and assign <br>");
+
+            document.writeln("<h3>logical operators</h3>");
+            var a=1, b=2;
+            document.writeln((a<b && b>a)+" :&& operator <br>");
+            document.writeln((a==1 || b==2)+" :|| operator <br>");
+            document.writeln(!(a==b) + ":! not operator <br>");
+
+            document.writeln("<h3>bitwise operators</h3>");
+            document.writeln((~2) + " :~ NOT bitwise operator <br>");
+            document.writeln((5 & 3) + " :& (*) bitwise operator <br>");
+            document.writeln((5 | 3) + " : | (+) bitwise operator <br>");
+            document.writeln((5 ^ 3) + " :^ XOR bitwise operator <br>");
+            document.writeln((5 << 2) + " :<< left shift operator <br>");
+            document.writeln((5 >> 2) + " :>> right shift operator <br>");
+            document.writeln((5 >>> 2) + " :>> right shift w 0 operator <br>");
+
+            document.writeln("<h3>the condition ? operator</h3>");
+            var a=7;
+            document.writeln((a>5) ? "a is greater than 5" : "a is lesser than 5");
+            
+
+        }   
+    </script>
+
+</body>
+</html>

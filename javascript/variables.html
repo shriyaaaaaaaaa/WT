@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables in javascript</title>
+</head>
+<script type="text/javascript">
+    const y=5; //Use const if the type should not be changed (arrays and objects)
+    let x = 10; //Use let if the type can be changed
+    var mark = 20.66; //Use var if the type can be changed and you want to
+    sub="webtech";
+    program='csit';  //js string variable should be enclosed in either single or double quotation marks.
+    var no=parseInt("10");                      //parses a string and returns int or floating
+    document.writeln( no+" is a integer <br>");
+    var nu=parseFloat("10.233");
+    document.writeln(mark+ " is a float <br>"); // we can even use w/o parse declared one.
+    var a =eval("x*y")+"<br>";
+    var b=eval("mark+nu");
+    var result=a+b; //it doesnot mean add but print a b ko results.
+    document.writeln(result +"<br>");
+    var title="name\tage\nlocation"
+    document.writeln(title +"<br>"); // \t :tab, \n: new line.
+    
+
+</script>
+<body>
+    <!--fyi:head ma implement hudaina-->
+    <script>
+    function abc(){
+        var c=20; //local variable is var declared inside block or function and only accessible within there
+        document.writeln(c+"<br>");
+    }
+    var data=10; //global variable is var that is accessible from any function
+    function a(){
+        document.writeln(data+"<br>");
+    }
+    a();
+    abc(); //calling javascript function
+</script>
+    
+
+    
+</body>
+</html>
