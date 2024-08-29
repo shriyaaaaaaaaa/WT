@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    <script>
+        //by object literals
+        emp=  //object_name
+        {
+           id:105,
+           name:"shriyayayya",
+           roll :120
+        };
+        document.writeln(emp.id+ "<br>" + emp.name+ "<br>" +emp.roll+ "<br>");
+        document.writeln("or use objectname ['propertyname'] " + emp["name"] +"<br>");
+
+        //by creating instance of object
+        var em=new Object(); // Creates a new object called emp, use capital O.
+            em.location="bkt";
+            em.country="nepal";  //use equals to.
+        document.writeln(em.location +" <br>"+ em.country+"<br>");
+
+        //by using object  constructor
+        function student(name,age,sub){
+            this.name=name;
+            this.age=age;
+            this.sub=sub;
+        }
+        stu=new student("ahha",20,"webtech");
+        document.writeln(stu.name+"<br>"+stu.age+"<br>"+stu.sub+"<br>");
+
+
+        //adding and deleting new properties
+        var emp1={name:"shri",age:20};
+        emp1.roll=34;
+        document.writeln("the added property is:" +emp1.roll +"<br>");
+
+        delete emp1.name;
+        document.writeln("the deleted property is:" +emp1.name +"<br>"); // Attempts to output the name property, which is now undefined
+
+        
+
+    </script>
+    
+</body>
+</html>

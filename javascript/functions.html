@@ -1,0 +1,43 @@
+<!--function is a group of reusable code which can be called anywhere in your program-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+    <script type="text/javascript">
+    function functionname(){
+        document.writeln("use function keyword to define, followed by unique function name, a list of parameters which might be empty and statement within curly braces.");
+    }
+    function printparameters(name,age){
+        document.writeln(name +" is " + age + " years old. <br>");
+    }
+    printparameters("John", 25); //passing parameters to function
+
+    function concatenatename(first,last){
+        var full;
+        full=first + last;
+        return full;
+    }
+    function printsname(){
+        var result;
+        result=concatenatename("John"," Doe");
+        document.writeln(result);
+    }
+    printsname();
+    
+</script>
+
+<body>
+    <h3>testing the function</h3>
+    <script type="text/javascript">
+    functionname(); //calling a function, simply write the name of function
+
+</script>
+
+    
+</body>
+</html>

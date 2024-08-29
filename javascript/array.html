@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript arrays</title>
+</head>
+<body>
+    <script>
+        //array declaration
+        var names=["shriya","aavash","alina"]; //literal array
+
+        document.writeln(names[0]+"<br>");
+        document.writeln(names[0][0]+"<br>");
+        document.writeln(names[2]+"<br>");  //accessing array.
+
+        //conventional array
+        var mycars=new Array(); //we can also define array length by Array(2) or use just []
+        mycars[0]="ford";
+        mycars[1]="toyota";
+        document.writeln(mycars[0]+"<br>");
+        document.writeln(mycars[1]+ "<br>");
+
+        //condensed array
+        var mycars=["ford","toyota"];
+        document.writeln(mycars[0]+"<br>"+mycars[1]+"<br>");
+
+        //array methods
+        //1. concat(): joins two array
+        var parents=["mother","father"];
+        var age=[56,45];
+        var family=parents.concat(age);
+        document.writeln(family +" :array1.concat(array2) <br>");
+
+        //2.length:returns length of array
+        var mycars=new Array("ford","toyota");
+        document.writeln(mycars.length+ " :arrayname.length <br>"); //1 bata start
+
+        //3.join:joins all element of array into string
+        var  food=["pizza","momo","chowmein"];
+        document.writeln(food.join("+")+ " :arrayname.join(seperator) <br>");
+
+        //4.indexOf():starts search from first returns -1 if not found
+        var food=["pizza","momo","chowmein","momo"];
+        document.writeln(food.indexOf("momo")+" :arrayname.indexOf(element) <br>");
+        document.writeln(food.indexOf("momo",2) + "<br>");//start search for momo from index 2 (0,1,2).
+
+        //5.lastIndexOf(): starts search from before specified position otherwise from last
+        var food="this is string momo and again momo";
+        document.writeln(food.lastIndexOf("momo")+" :arrayname.lastIndexOf(element,start) <br>");//counts space too.
+        document.writeln(food.lastIndexOf("momo",2) + "<br>");//Since "momo" does not appear before index 2, it returns -1.
+
+        //6.pop():removes last element of array  and returns that  element
+        var num=[1,3,5,6,89];
+        var remove=num.pop();
+        document.writeln(remove+"<br>"); //returns 89 and removes 89 from array
+        document.writeln(num+" <br>");
+
+        //7.push():adds one or more element to end of array and returns the new length of array.
+        var num=[1,3,5,6];
+        var add=num.push(89,90);
+        document.writeln("the new array is:" +num +"<br>"); //returns 5
+        document.writeln(add+" <br>"); //returns 6
+
+        //8.reverse():reverses the order of element of array
+        var numbers=[3,434,453,78];
+        document.writeln(numbers.reverse() +" <br>"); 
+
+        //9.shift():removes first elemeny of array and returns that element
+        var str=[482,"name",78]
+        document.writeln(str.shift() + "<br>"); //returns removed element
+        document.writeln(str + "<br>"); //aftermath array
+
+        //10.unshift():adds elements to front of array and returns the leength of array
+        var str=["name","age"];
+        var add=str.unshift(78,90);
+        document.writeln(add+"<br>"); //returns 4 that is length of array
+        document.writeln(str+"<br>"); //aftermath array
+
+        //11.sort():sorts element of array
+        var num=["mango","banana","apple"];
+        document.writeln(num.sort() +"<br>");   //sorts string by default
+        var nums=[23,565,243,78];
+        document.writeln(nums.sort(function(a,b){return a-b}) +"<br>"); //sorts number
+
+        //12.slice():extracts section of array and returns new array
+        var atr=["mango","pineapple","apple"];
+        document.writeln(atr.slice(1,3) +" :arrayname.slice(begin,end) <br>");
+
+        //13.toString(): returns string representing array and its elements
+        var num=[1,2,3];
+        document.writeln(num.toString() +"<br>");
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

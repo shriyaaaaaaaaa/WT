@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data Type</title>
+</head>
+<body>
+    <script>
+        // Primitive Data Types
+    // Number
+    let num = 42;
+    document.write(typeof num + "<br>"); // Output: "number"
+    
+    // String
+    let str = "Hello, World!";
+    document.write(typeof str + "<br>"); // Output: "string"
+    
+    // Boolean
+    let isTrue = true;
+    document.write(typeof isTrue + "<br>"); // Output: "boolean"
+    
+    // Undefined
+    let undef;
+    document.write(typeof undef + "<br>"); // Output: "undefined"
+    
+    // Null
+    let nul = null;
+    document.write(typeof nul+ "<br>"); // Output: "object" (this is a known quirk in JavaScript)
+    
+    // Symbol
+    let sym = Symbol();
+    document.write(typeof sym+ "<br>"); // Output: "symbol"
+    
+    // BigInt
+    let bigIntNum = 1234567890123456789012345678901234567890n;
+    document.write(typeof bigIntNum+ "<br>"); // Output: "bigint"
+    
+    // Non-Primitive Data Types
+    
+    // Object
+    let obj = { name: 'nits', age: 22 };
+    document.write(typeof obj+ "<br>"); // Output: "object"
+    
+    // Array (also an object)
+    let arr = [1, 2, 3, 4, 5];
+    document.write(typeof arr+ "<br>"); // Output: "object"
+
+    // Date
+    let date = new Date();
+    document.write(typeof date+ "<br>"); // Output: "object"
+    
+    // RegExp
+    let regex = /ab+c/;
+    document.write(typeof regex+ "<br>"); // Output: "object"
+    </script>
+    
+      
+</body>
+</html>

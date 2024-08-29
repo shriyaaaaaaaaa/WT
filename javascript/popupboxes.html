@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup boxes</title>
+</head>
+        <script type="text/javascript">
+            function alert_msg(){
+                alert("this is an alert message");  //we can only use this linecode for simplicity.
+                                                    //alert boxes only give ok button to select and proceed.
+            } 
+            
+            function confirm_msg(){
+               var r= confirm("are you sure you want to continue?"); //takes users consent OK and cancel button.
+               if(r==true){
+                document.writeln("you pressed ok!"); }
+
+                else{
+                    document.writeln("you pressed cancel");
+                }
+            }
+
+            var name=prompt("enter your name: " ,"write your name here!");   //enables interaction w user.
+            //document.writeln("your name is :" + name); //ok and cancel button. can put it here too.
+            
+ 
+        </script>
+
+<body>
+    <input type="button" onclick="alert_msg()" value="show alert message"/>
+
+    <input type="button" onclick="confirm_msg()" value="show confirm box"/>
+    <script>
+        document.writeln("your name is :" + name); //ok and cancel button
+    </script>
+
+    
+</body>
+</html>
