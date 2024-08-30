@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean in javascript</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //1. match(regexp):match regular expression against a string
+        var str="let's gooo";
+        document.writeln(str.match(/o/g)+ " <br>"); //The regular expression /o/g searches for all occurrences of the letter "o" in the string "let's gooo".
+                                           //The g flag stands for "global," meaning it will find all matches rather than stopping after the first match.
+        document.writeln(str.match(/train/)+"<br>");   //null if note found. 
+    
+    //2. i expression:perform case insensitive matching
+        var str="some any all blah Blah";
+        document.writeln(str.match(/Blah/i)+"<br>"); //it matches the first occurrence of "Blah" or "blah" in the string, which is "blah."
+
+    //3. /gi is used to match occurrences of the string in a case-insensitive manner and across the entire string.
+        var str="Is this all there is?";
+        var patt1=/is/gi;
+        document.write(str.match(patt1) + "<br>");
+
+    //4.The test() method searches a string for a specified value and returns true or false, depending upon the result.
+    var patt1=new RegExp("e");
+    document.write(patt1.test("The best things in life are free")+"<br>");
+
+    //5.exec() method searches a string for a specified value and returns the text of the found value.otherwise null
+    var patt1=new RegExp("e");
+    document.write(patt1.exec("The best things in life are free")+"<br>");
+
+    //6. caret(^) at beginning of RE means string being searched must start with this pattern.
+    var patt1=new RegExp("^fo");
+    document.writeln(patt1.exec("food breakfood")+"<br>"); //whole sentence nai fo bata start
+
+    //7. dollar($) at the end of a regular expression indicates that the string being searched must end with this pattern
+    var patt1=new RegExp("o$");
+    document.writeln(patt1.exec("go theroe")+"<br>"); //last ma o chaina
+
+
+
+    </script> 
+
+</body>
+</html>

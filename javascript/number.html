@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number objects</title>
+</head>
+<body>
+   <script text="text/javascript">
+
+    //1.toExponential(x):x is optional and rep. no. of digits after decimal point
+    var num=1123.434;
+    document.writeln(num.toExponential(3)+"<br>");
+
+    //2.toFixed(x):decimal pachi lai roundoff garne sorts.x tei optional
+    var num=12.599789;
+    document.writeln(num.toFixed(2)+"<br>");
+
+    //3.toLocaleString(locales,options):returns string value ani comma haru add garne
+    var num=2343.53332;
+    document.writeln(num.toLocaleString()+"<br>");
+
+    //4.toPrecision(x optional):kati ota total digit display garne.(not after decimal)
+    var num=123.456789;
+    document.writeln(num.toPrecision(5)+"<br>");
+
+    //5.toString():returns string representation of number's value
+    var num=123.49;
+    document.writeln(num.toString(8)+"<br>"); //octal ma gayo.
+
+    //6.valueOf():returns no. value
+    var num=0/0;
+    document.writeln(num.valueOf());   //not a number
+
+   </script>
+
+   
+</body>
+</html>

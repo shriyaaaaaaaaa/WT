@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document object model</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        //1.accessing field value by document object
+        
+        function printvalue(){
+            var name=document.form1.name.value; //doc is the root element that rep html doc
+            alert("welcome " +name);
+        }
+    </script>
+    <form name="form1">
+        enter name:<input type="text" name="name" />
+        <input type="button" onclick="printvalue()" value="print name"/>
+    </form>
+
+    <script type="text/javascript">
+
+        //2.document.getElementById("elementid").value
+
+        function getcube(){
+            var cubeof=document.getElementById("cube").value;
+            alert(cubeof*cubeof*cubeof);
+        }
+    </script>
+    <form>
+        enter no. <input type="text" id="cube" name="cube"/><br/>
+        <input type="button" onclick="getcube()" value="submit"/>
+    </form>
+
+    <!--3. getElementByClassName('name') used for selecting or getting the elements through their class name value.
+      This DOM method returns an array-like object that consist of all the elements having the specified classname. -->
+
+    <div class="class">
+        simple class implementation
+    </div>
+
+    <script type="text/javascript">
+        var x=document.getElementsByClassName('class');
+        document.write("On calling x, it will return an array-like object: <br>"+x);
+    </script>
+
+    <script type="text/javascript">
+
+        //4.getElementByName("name"):returns element of specified name
+
+        function gggender(){
+            var gender=document.getElementsByName("gender");
+            for (var i = 0; i < gender.length; i++) {
+           if (gender[i].checked) {
+            alert("Your gender: " + gender[i].value);
+           }
+        }
+    }
+    </script>
+    <form>
+        Male: <input type="radio" name="gender" value="male"/>
+        Female: <input type="radio" name="gender" value="female"/>
+        <input type="button" onclick="gggender()" value="submit"/>
+    </form>  
+
+    <script type="text/javascript">
+
+        //5.getElementByTagName(): returns all the element of specified tag
+
+        function count(){
+            var x=document.getElementsByTagName("h1");
+            alert("total h1 tags are: " +x.length);
+        }  
+        function count1() {
+            var y=document.getElementsByTagName("h2");
+            alert("total h2 tags are:" +y.length);       //same func ma halda ni bho
+        }
+    </script>
+      <h2>this is h2 tag</h2>
+      <h1>this is h1 tag</h1>
+      <button onclick="count1()">count h2 tag</button>
+      <button onclick="count()">count h1 tag</button>   <!--button bhitrai text wala-->
+
+
+</body>
+</html>

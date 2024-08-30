@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strings</title>
+    <title>Strings in javascript</title>
 </head>
 <body>
-    
+    <script type="text/javascript">
+
+        //1.length:returns length of string
+        var str = "Hello World";
+        document.writeln(str.length+ "<br>");
+
+        //2.charAt(index):returns charcater at specified index: 0,1,2..
+        var text="this is a string";
+        document.writeln(text.charAt(4)+ "<br>"); //there is space in 4th index pos
+
+        //3.concat():cobines text of two string and returns new string
+        var str1="hello";
+        var str2="there";
+        document.writeln(str1.concat(str2)+ "<br>");
+
+        //4.indexOf(searchvalue,start):returns first occurence of specified value
+        var str="let's gooo";
+        document.writeln(str.indexOf("let")+"<br>")  //0,1,2,...
+        document.writeln(str.indexOf("o",8)+"<br>") //8,9,..
+
+        //5.lastIndexOf(searchvalue,start):returns last occurence 
+        var str="let's gooo";
+        document.writeln(str.lastIndexOf("o")+"<br>")  //9,8,7..
+        document.writeln(str.lastIndexOf("o",8)+"<br>") //8,7,6,5..
+
+        //6.localeCompare(comparestring):returns number indicating whether reference no. comes before or after or same as given string in sort order.
+        var str1="let's see this ";
+        document.writeln(str1.localeCompare("see")+"<br>");
+        //If the method returns 0, it means the strings are equal.
+        //If it returns a negative number, it means str1 is ordered before the string being compared.
+        //If it returns a positive number, it means str1 is ordered after the string being compared.
+
+        //7.match(regexp):match regular expression against a string
+        var str="let's gooo";
+        document.writeln(str.match(/o/g)+ " <br>"); //The regular expression /o/g searches for all occurrences of the letter "o" in the string "let's gooo".
+                                           //The g flag stands for "global," meaning it will find all matches rather than stopping after the first match.
+        document.writeln(str.match(/train/)+"<br>");   //null if note found.   
+
+        //8.replace(searchvalue,newvalue): find the match and then replace w new substring
+        var str="this is webtech";
+        document.writeln(str.replace("webtech","webtechnology")+"<br>");
+
+        //9.search(searchvalue):searches the match between regexp and specified string
+        var str="this is a string."
+        document.writeln(str.search("i")+"<br>"); //0,1,2
+
+        //10.slice(start,end):extracts the section of string and returns new string.
+        var str="hello hi there";
+        document.writeln(str.slice(0,3)+"<br>");
+
+        //11.split(seperator,limit):split string into array of string by seperating string into substring.
+        var str=("banana mango apple and what not"); //separator: A string or regular expression that specifies the point(s) at which each split should occur. 
+        document.writeln(str.split(" ", 3)+"<br>"); //1,2,3. we are splitting on spaces. word use bhako bhaye tesko thau ma ,. also quotation ma space chaina bhane harek word split huncha
+
+        //12.substr(start,length):returns the string beginning st specified location through specified no. of characters
+        var str="hello hi there";
+        document.writeln(str.substr(0,7)+ "<br>");
+
+        //13.toLowerCase():converts to lower case and toUpperCase
+        var str="Help ME!";
+        document.writeln(str.toLowerCase()+"<br>");
+        document.writeln(str.toUpperCase()+"<br>");
+
+        //14.toString():converts number to string, When used with a number as an argument, it converts the number to a string representation in the specified base or radix 
+        var num=123;                              //by deafult if no base given it converts to decimal
+        document.writeln(num.toString(8)+"<br>"); //converts the number 123 to its string representation in base 8 (octal).
+
+        //15. math
+        var pi_value=Math.PI;
+        var sqrt_value=Math.sqrt(16);
+        var powerOf=Math.pow(3,5);   //3 ko power 5
+        document.writeln(pi_value +"<br>");
+        document.writeln(sqrt_value+ "<br>");
+        document.writeln(powerOf+"<br>");
+
+        //16. date 
+        var date=new Date();
+         date.setFullYear(2010,0,5); //year 2010, month jan, day 15.
+         document.writeln(date.toString()+"<br>") //in humman readable format
+          
+         date.setDate(date.getDate()+ 2); //If adding five days to a date shifts the month or year , the changes are handled automatically by the Date object itself.
+         document.writeln(date.toString()+"<br>");
+        
+        //getDate: return day of the month
+        //getDay:return day of the week
+
+        
+
+    </script>
 </body>
 </html>
