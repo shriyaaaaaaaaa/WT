@@ -1,0 +1,95 @@
+<!--syntax:$(document).ready(function(){
+       jquery methods
+}-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+</head>
+<!--downloading jquery using production version  <script src="jquery-3.4.1.min.js"></script>-->
+
+<!--CDN google-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){   //used to check and stop jquery before the document is finished loading
+        $("#hide").click(function(){     //Attaches a click event handler to the button with the id="hide". 
+            $("p").hide();    //hides all p elements
+        });
+    $(".show").click(function(){
+        $("p").show();    //shows all p elements
+    });
+    $("#changeColor").click(function(){
+          $("p").css("color", "red");
+    });
+    $("#addClass").click(function(){
+        $("p").addClass("highlight");
+     });
+
+    $("#removeClass").click(function(){
+        $("p").removeClass("highlight");
+    });
+
+    $("#fadeOut").click(function(){
+        $("p").fadeOut();
+    });
+
+    $("#fadeIn").click(function(){
+        $("p").fadeIn();
+    });
+
+    $("#slideUp").click(function(){
+        $("p").slideUp();
+     });
+
+    $("#slideDown").click(function(){
+        $("p").slideDown();
+    });
+
+    $("p").hover(
+        function(){
+                 $(this).css("background-color", "yellow");
+        },
+         function(){
+                $(this).css("background-color", "");   //this selects current element
+         });
+    
+     $("#append").click(function(){
+        $("p").append("<span> Appended Text</span>");
+    });
+        
+
+    $("#prepend").click(function(){
+        $("p").prepend("<span> Prepend Text</span>");
+    });
+
+    $("#remove").click(function(){
+        $("p").remove();
+    });
+
+    });
+
+</script>
+<body>
+    
+
+    <p>if you click in "hide" button i will disappear</p>
+    <button id="hide">hide</button>
+    <button class="show">show</button>
+    <button id="changeColor">Change Color</button>
+    <button id="addClass">Add Class</button>
+    <button id="removeClass">Remove Class</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="fadeIn">Fade In</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideDown">Slide Down</button>
+    <button id="append">Append</button>
+    <button id="prepend">Prepend</button>
+    <button id="remove">Remove</button>
+
+    
+</body>
+</html>

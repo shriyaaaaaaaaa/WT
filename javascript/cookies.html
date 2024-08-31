@@ -1,2 +1,92 @@
-<!--Syntax:
-document.cookie = "key1 = value1;key2 = value2;expires = date";-->
+<!--Cookies were invented to solve the problem "how to remember information about the user"
+Syntax: document.cookie = "key1 = value1;key2 = value2;expires = date";-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies</title>
+</head>
+<body>
+
+    <!--1.storing /setting cookies-->
+    <script type="text/javascript">
+        function writecookie(){
+            var customerName = document.getElementById("customerName").value.trim(); // Trim spaces removes any leading or trailing whitespaces from the input.
+             //trim() ensures that if the user accidentally includes spaces before or after their name, those spaces are removed.
+            if(customerName == ""){ //checks if the input is empty after trimming.
+                alert("Please enter your name");
+                return;
+            }
+            var cookievalue = escape(customerName); // escape() function encodes a string, making it safe to be used in URLs or as a cookie value. 
+            //It converts special characters into a format that can be transmitted over the internet without issues. For example, spaces are converted to %20.
+
+
+            document.cookie = "customer=" + cookievalue +  "; path=/"; // Ensure cookie is set for the entire site
+            document.write("Setting cookie: " + "name=" + cookievalue);
+        }
+    </script>
+    
+    <form action="">    <!--The action attribute of a <form> tag specifies the URL to which the form data will be sent when the form is submitted.
+                         Here, the action="" means that the form data will be sent to the same URL as the current page. -->
+        Name: <input type="text" id="customerName"><br><br>
+        <input type="button" value="Set Cookie" onclick="writecookie()"><br><br>
+    </form>
+
+    <!--2. reading cookie / get cookie-->
+    <script type="text/javascript">
+        function getCookie() {
+            var allCookies = document.cookie  //[or use ="session=nfda"+ ";path=/";] // Get all cookies as a single string. code line 24 we have set key as customer
+            document.write("All cookies: " + allCookies + "<br>"); // Display all cookies
+    
+            // Split the cookies string into an array of individual cookies
+            var cookieArray = allCookies.split(";"); 
+    
+            // Loop through each cookie and display its key-value pair
+            cookieArray.forEach(function(cookie) {
+                var [name, value] = cookie.split("="); // Destructure the cookie into name and value
+                document.write("Key: " + name + " <br> Value: " + value + "<br>");
+            });
+        }
+    </script>
+        <form action="">
+            <input type="button" value="Get Cookie" onclick="getCookie()">
+        </form>
+    </body>
+    </html>
+<!-- The split("=") method splits the cookie string into two parts: name and value, using the equals sign (=) as the delimiter.
+Array Destructuring: The [name, value] syntax assigns the first part of the split string to name and the second part to value.
+ For example, if cookie is "customer=JohnDoe", then name will be "customer" and value will be "JohnDoe".-->
+
+ <!--3.setting expiry date on cookies-->
+ <script type="text/javascript">
+    
+
+        // Set the expiry date for the cookie (e.g., 7 days from now)
+        var expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + 7); // Set the expiry to 7 days from now
+
+        //we can also do month by replacing setDate and getDate by setMonth and getMonth
+
+        document.cookie = "customer=" + cookievalue + "; expires=" + expiryDate.toUTCString() + "; path=/";
+        document.write("Setting cookie: " + "name=" + cookievalue + "<br>");
+
+        //expiryDate.toUTCString():Converts the date to a UTC string format, which is required by the expires attribute in the cookie.
+
+//4. deleting a cookie: to do this set expiry date to time in past
+
+var expiryDate=new Date();    //new Date object representing the current date and time
+expiryDate.setYear(expiryDate.getYear()-1);
+
+document.cookie="customer=" +"; expires="+expiryDate.toUTCString()+ "; path=/";
+
+
+   
+//sets a cookie with an expiry date that is one year in the past. 
+//As a result, the cookie will be immediately expired and will be removed by the browser
+        
+        
+
+
+    
+
