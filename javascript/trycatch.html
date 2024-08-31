@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Try-Catch-Finally with document.write()</title>
+</head>
+<body>
+    <script type="text/javascript">
+        try {
+            // Code that might throw an exception
+            document.write("<p>Starting the try block</p>");
+
+            // For demonstration, we will throw an error manually
+            throw new Error("Something went wrong!");
+
+            // This line will not be executed because the error is thrown above
+            document.write("<p>This line will not be executed</p>");
+
+        } catch (error) {
+            // Code to handle the exception
+            document.write("<p>Caught an error: " + error.message + "</p>");  //sthg went wrong msg
+
+        } finally {
+            // Code that will always be executed
+            document.write("<p>Finally block executed, regardless of whether an error occurred</p>");
+        }
+
+        document.write("<p>Code after the try-catch-finally blocks</p>");
+    </script>
+</body>
+</html>

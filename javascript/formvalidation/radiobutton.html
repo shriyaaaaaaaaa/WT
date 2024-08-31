@@ -1,0 +1,36 @@
+<!--Radio buttons are used if we want to choose any one out of many options such as gender.
+    In such case any one of the radio button must be selected.-->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>radio button validation</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function validate(){
+                var radio = document.getElementsByName("gender");
+                if(radio[0].checked==false && radio[1].checked==false){
+                    alert("please select one!")
+                }
+                else if(radio[0].checked==true){
+                    alert("male");
+                }
+                else{
+                    alert("female");
+                }
+            }
+        </script>
+        <form>
+            select a gender: <input type="radio" name="gender">
+            <label>male</label>
+            <input type="radio" name="gender">female
+            <input type="button" onclick="validate()" value="ok";
+        </form>
+    </body>
+    </html>
+
+
+

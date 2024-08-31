@@ -1,0 +1,60 @@
+<!--If someone is entering a credit card, phone number, zip code, similar information you want to be able to ensure that the input is all numbers.
+The quickest way to check if an input's string value is all numbers is to use a regular expression /^[0-9]+$/ that will only match if the string is all numbers and is at least one character long.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checking for all number</title>
+</head>
+<body>
+    <script type="text/javascript">
+    function allnumber(){
+        let pattern=/^[0-9]+$/;   //big bracket make sure
+        let num=document.getElementById("num").value;
+        if(num.match(pattern)){   //matches regexp againt a string. string.match(regexp)
+            alert("valid entry");
+        }
+        else{
+            alert("invalid entry");
+            document.getElementById("num").value=" "; // Clears the field on invalid entry     *both not necessary on valid but can put outside of else to apply for all.*
+           document.getElementById("num").focus();   //refocuses the field
+        } 
+        
+    }
+</script>
+<form>
+    enter no: <input type="text" id="num" name="num">
+    <input type="button" value="check" onclick="allnumber()"> <br> <br>
+</form>
+
+
+<!--2.checking for all letters-->
+<script type="text/javascript">
+  //If we wanted to see if a string contained only letters we need to specify an expression that allows for both lowercase and uppercase letters: /^[a-zA-Z]+$/
+
+  function allletters(){
+    let pattern=/^[a-zA-Z]+$/;
+    let letters=document.getElementById("letters").value;
+    if(letters.match(pattern)){
+        alert("valid entry");
+    }
+    else{
+        alert("invalid entry");
+    }
+  }
+</script>
+<form>
+    enter name: <input type="text" id="letters" name="letters">
+    <input type="button" value="submit" onclick="allletters()"> <br> <br>
+</form>
+
+
+<!--3.letter and number validation; alphanumeric only: /^[0-9a-zA-Z]+$-->
+
+</body>
+</html>
+
+
+

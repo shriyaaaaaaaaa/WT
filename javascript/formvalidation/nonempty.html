@@ -1,0 +1,40 @@
+<!-- CHECKING FOR NON-EMPTY
+You want to be sure that your visitors enter data into the HTML fields you have "required" for a valid submission.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checking for non-empty</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function notEmpty(){
+            var str = document.getElementById("myInput").value;
+            if(str.length==0){
+                alert("Please enter something");
+                document.getElementById("myInput").value=" "; //yo nahale ni chalcha
+                document.getElementById("myInput").focus();
+
+            }        
+        }
+    </script>
+    <form>
+        <input type="text" id="myInput" name="myInput">
+        <input type="button" value="check" onclick="notEmpty()">   
+
+    </form>
+</body>
+</html>
+
+
+<!--document.getElementById('elem') selects the HTML element with the ID elem.
+
+.value is a property that refers to the current content or value of an input field (like a text box).
+" " (a string containing a single space) is what we're assigning to the value property, which will replace any existing text in the input field with a space
+In some cases, setting the field to an empty string could cause problems with form submission or UI layout, so inserting a space ensures that the field isn't truly "empty" but appears blank to the user
+
+
+.focus() is a method that makes the selected element the active element on the page. When applied to an input field, it places the cursor inside the field, making it ready to accept user input.-->

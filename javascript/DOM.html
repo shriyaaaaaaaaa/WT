@@ -83,6 +83,23 @@
       <button onclick="count1()">count h2 tag</button>
       <button onclick="count()">count h1 tag</button>   <!--button bhitrai text wala-->
 
+      <script>
+        //6.innerhtml
+        function change(){
+            var data="html bhitra ko content?";
+            var sthg=document.getElementById("id").innerHTML;
+           alert(sthg); //yelle garda chai div id ko content aucha
+            
+            document.getElementById("id").innerHTML=data;  //yaha bata data ko tyo 
+
+            document.getElementById('id').innerHTML="is set to a new string, which replaces the original content.";
+        }
+      </script>
+      <form>
+        <input type="button" value="reveal" onclick="change()">
+        <div id="id">innerhtml matra cha bhane yo dekhaucha</div>
+      </form>
+
 
 </body>
 </html>

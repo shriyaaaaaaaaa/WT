@@ -1,0 +1,47 @@
+<!--By making the first option of your select input something like "Please Choose" you can spur the user to both make a selection
+ and allow you to check to see if the default option "Please Choose" is still selected when he/she submit the form.-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selection mode</title>
+ </head>
+ <body>
+    <script type="text/javascript">
+        function validate(){
+         var sel = document.getElementById("mySelect").selectedIndex;
+         var v=document.getElementById("mySelect").options[sel].text;
+         if(v=="please choose"){
+            alert("you must choose the country")
+         }
+         else{
+            alert("your country is "+v);
+         }
+        }
+    </script>
+    <form>
+      select a country: <select id="mySelect">
+         <option>please choose</option>
+         <option>nepal</option>
+         <option>newzealand</option>
+         <option>switzerland</option>
+      </select>
+
+      <input type="button" onclick="validate()" value="check"/>
+      
+    </form>
+ </body>
+ </html>
+
+ <!--var sel = document.getElementById('mySelect').selectedIndex;
+This line gets the index of the selected option in the dropdown list with the ID 'mySelect'.
+ The index refers to the position of the selected option within the list, starting from 0 for the first option.
+
+var v = document.getElementById('mySelect').options[sel].text;
+This line retrieves the text of the selected option using the index obtained in the previous line.
+ The text property refers to the visible content of the option in the dropdown.
+
+If "Nepal" is selected, sel will be 1, and v will be "Nepal".
+If "Please Choose" is selected, sel will be 0, and v will be "Please Choose" which triggers an alert.-->
