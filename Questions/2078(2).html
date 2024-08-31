@@ -1,0 +1,122 @@
+<!--Create an HTML signup form with fields Name, Email, Password, and Age, Validate the form using JavaScript.
+ Write functions for validating each of the elements. All of the fields should not be empty.
+  The Email address should be a valid email, the password should be of length at least 6 and should start with the alphabet and end with a digit. 
+  The age should be between 8 and 60.-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html signup form then validation</title>
+
+<script type="text/javascript">
+
+          function validateForm(event) {
+            event.preventDefault(); // Prevent form submission if validation fails
+
+            // Call validation functions
+            const isNameValid = notempty();
+            const isEmailValid = email();
+            const isPasswordValid =password();
+            const isAgeValid = age();
+
+            // Submit form if all validations are successful
+            if (isNameValid && isEmailValid && isPasswordValid && isAgeValid) {
+                alert("Form is valid and ready to be submitted!");
+                
+            }
+        }
+
+    function notempty(){
+        var name = document.getElementById("name").value;
+        if(name.length==0){
+            alert("required field!");
+            document.getElementById("name").value=" ";
+            document.getElementById("name").focus();
+            return false;
+        }
+        return true;
+    }
+    function email(){
+        var patt=/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+        var email = document.getElementById("email").value;
+        if (email.length === 0) {
+                alert("Email is a required field!");
+                document.getElementById("email").focus();
+                return false;
+        }
+        if(!email.match(patt)){
+            alert("invalid email");
+            document.getElementById("email").value=" ";
+            document.getElementById("email").focus();
+            return false;
+        }
+        return true;
+    }
+    function password(){
+        var minlen=6
+        var reg=/^[a-zA-Z][a-zA-Z0-9]*[0-9]$/;
+        var password = document.getElementById("password").value;
+        if (password.length === 0) {
+                alert("Password is a required field!");
+                document.getElementById("password").focus();
+                return false;
+        }
+        if(password.length<minlen && !password.match(reg)){
+
+            alert("invalid password");
+            document.getElementById("password").value=" ";
+            document.getElementById("password").focus();
+            return false;
+        }
+        return true;
+    }
+    function age(){
+        var min=8;
+        var max=60;
+        var age = document.getElementById("number").value;
+        if (age.length === 0) {
+                alert("Age is a required field!");
+                document.getElementById("number").focus();
+                return false;
+        }
+        if(age <min || age > max){    //no. cant be both less than 8 and more than 60 so use or operator
+            alert("age must be between 8 and 60");
+            document.getElementById("number").value=" ";
+            document.getElementById("number").focus();
+            return false;
+        }
+        return true;
+    }
+
+
+</script>
+</head>
+<body>
+    <form>
+    <h2>Signup form</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <label for="number">Age:</label>
+    <input type="number" id="number" name="number">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+
+    <input type="submit" value="submit" onclick="validateForm(event)">
+</form>
+    
+</body>
+</html>

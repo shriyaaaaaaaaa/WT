@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+
+<script type="text/javascript">
+    function validateForm(event){
+        event.preventDefault();
+
+        // Call validation functions
+            const isNameValid = notempty();
+            const isPasswordValid =password();
+            const ischeckValid = check();
+
+            // Submit form if all validations are successful
+            if (isNameValid && isEmailValid && ischeckValid ) {
+                alert("Form is valid and ready to be submitted!");
+                
+            }
+    }
+
+    function notempty(){
+        var name = document.getElementById("username").value;
+        if(name.length==0){
+            alert("username required!")
+            document.getElementById("username").focus();
+            return false;
+        }
+        return true;
+    }
+    function password(){
+        var password = document.getElementById("password").value;
+        var minlen=5;
+        if(password.length<minlen){
+            alert("password should be min 5 character!")
+            document.getElementById("password").focus();
+            return false;
+        }
+        return true;
+    }
+    function check() {
+            var checkboxes = document.querySelectorAll("input[name='hobby']");
+            var isHobbyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+            if (!isHobbyChecked) {
+                alert("At least one hobby must be selected.");
+                return false;
+            }
+            return true;
+        }
+
+</script>
+</head>
+<body>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"> <br><br>
+
+    <label for="password">password:</label>
+    <input type="password" id="password" name="password"><br><br>
+ 
+
+    <fieldset>
+        <legend>Hobbies:</legend>
+        <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+        <label><input type="checkbox" name="hobby" value="traveling"> Traveling</label>
+        <label><input type="checkbox" name="hobby" value="cooking"> Cooking</label>
+    </fieldset>
+    <br><br>
+
+    <input type="submit" onclick="validateForm(event)" value="submit">
+
+    
+
+</body>
+</html>
+
+
+
+<!--document.querySelectorAll("input[name='hobby']"):
+
+This method selects all <input> elements with the name attribute equal to 'hobby'.
+It returns a NodeList, which is similar to an array but not exactly the same. The NodeList contains all the checkbox elements that match the selector.
+
+
+Array.from(checkboxes):
+
+Array.from() converts the NodeList into a true array.
+
+.some(checkbox => checkbox.checked):
+
+The some() method checks if at least one element in the array satisfies the provided testing function
+checkbox is each element in the checkboxes array (i.e., each checkbox input).
+checkbox.checked checks if the current checkbox is checked (i.e., if its checked property is true).-->
