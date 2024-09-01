@@ -1,0 +1,87 @@
+
+<!--0: request not initialized                                          200: "OK"  , 403: "Forbidden"  ,  404: "Not Found"
+1: server connection established
+ 2: request received 
+ 3: processing request
+  4: request finished and response is ready                                 Async(T) is non-blocking, which means it will send multiple requests to a server. 
+                                                                            Sync(F) is blocking — it will only send the server one request at a time and wait for that request to be answered by the server.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax XML Http request</title>
+</head>
+<body>
+
+    <div id="demo"></div>
+        <h1>Data from Server. get method</h1>
+        <button type="button" onclick="loaddoc()">change content</button>
+    </div>    <!--div bhitra yo sab rakhda result next page ma aucha. nabhaye tei mathi dekhaucha-->
+    
+
+    <script type="text/javascript">
+        function loaddoc(){
+        var xhttp=new XMLHttpRequest();    //creates a new XMLHttpRequest object, which is used to interact with servers and send requests.
+        xhttp.onreadystatechange=function(){   //This sets up an event handler function that is triggered every time the readyState of the XMLHttpRequest object changes. The readyState property holds the status of the XMLHttpRequest.
+            if (this.readyState == 4 && this.status == 200) {   //This checks if the request has completed (readyState == 4) and if it was successful (status == 200).
+                document.getElementById("demo").innerHTML=this.responseText;   //If the request is successful, this line updates the content of the div with the id demo using the data received from the server (this.responseText).
+            }
+            else {
+                // We reached our target server, but it returned an error
+                document.getElementById("demo").innerText = 'Error: ' + this.status;
+            }
+        };
+        // Handle network errors
+        xhttp.onerror = function() {
+            document.getElementById("demo").innerText = 'Request failed';
+        };
+
+        xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);  //This configures the request by specifying the HTTP method (GET), the URL to request, and whether the request should be asynchronous (true).
+        xhttp.send();   //sends the HTTP request to the server.Used for GET requests
+    }
+
+</script>
+
+  
+</body>
+</html>
+
+<!--  POST METHOD
+
+<script>
+    function submitData() {
+        
+        var xhr = new XMLHttpRequest();
+
+        // Configure it: POST-request for the URL /submit-data
+        xhr.open('POST', '/submit-data', true);
+
+    
+
+        /
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                
+                document.getElementById('response').innerText = xhr.responseText;
+            } else {
+                
+                document.getElementById('response').innerText = 'Error: ' + xhr.status;
+            }
+        };
+
+        
+        xhr.onerror = function() {
+            document.getElementById('response').innerText = 'Request failed';
+        };
+
+        // Prepare the data to send (this example uses URL-encoded form data)
+        var data = 'name=John&age=30';
+
+        // Send the request with the data
+        xhr.send(data);  //for post send(string)
+    }
+</script> 
+-->

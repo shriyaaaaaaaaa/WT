@@ -1,0 +1,46 @@
+<!--complex type:
+xs:sequence=the elements must appear in order specified
+xs:all=elements must appear, but order isnot important
+xs:choice=only one elements can appear    -->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="sthg">
+        <xs:complexType>
+            <xs:sequence>     
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="age" type="xs:integer"/>
+            </xs:sequence>
+
+            <xs:all>
+                <xs:element name="address" type="xs:string"/>
+                <xs:element name="phone" type="xs:string"/>
+            </xs:all>
+
+            <xs:choice>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="website" type="xs:string"/>
+            </xs:choice>
+        </xs:complexType>
+   ></xs:element>
+
+   <!--xml doc-->
+   <sthg>
+    <name>John</name>
+    <age>25</age>
+    <address>123 Main St</address>
+    <phone>123-456-7890</phone>
+    <email>bjcsnmxal</email>
+   </sthg>
+
+
+2 method) The "employee" element can have a type attribute that refers to the name of the complex type to use:
+<xs:element name="employee" type="personinfo"/>
+<xs:complexType name="personinfo">
+<xs:sequence>
+<xs:element name="firstname" type="xs:string"/>
+<xs:element name="lastname" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+

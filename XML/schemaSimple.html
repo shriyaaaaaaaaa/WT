@@ -1,0 +1,33 @@
+<!--simple type= <xs:element name="item" type="xs:string/>"-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="author">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="FirstName" type="xs:string"/>
+                <xs:element name="age" type="xs:integer"/>
+                <xs:element name="birthdate" type="xs:date"/>
+                <xs:element name="marks" type="xs:decimal"/>
+                <xs:element name="float"type="xs:float"/>
+                <xs:element nmae="time" type="xs:time"/>
+                <xs:element name="boolean" type="xs:boolean"/>
+                <xs:element name="double" type="xs:double"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+<!--xml for above code-->
+<author>
+    <FirstName>John</FirstName>
+    <age>25</age>
+    <birthdate>1970-03-24</birthdate>
+    <marks>30.5</marks>
+    <float>39.42</float>
+    <time>20:59:20</time>   <!--hh:min:ss-->
+    <boolean>true</boolean>
+    <double>4389.42</double>
+
+</author>
