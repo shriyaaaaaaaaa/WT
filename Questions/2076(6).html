@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Custom Animation Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #mydiv {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="animateBtn">Animate</button>
+<div id="mydiv"></div>
+
+<script>
+    $(document).ready(function(){
+        $("#animateBtn").click(function(){
+            $("#mydiv").animate({
+                left: '+=300px',  // Move right by 300px
+                top: '+=150px',   // Move down by 150px
+                width: '200px',   // Increase width to 200px
+                height: '200px',  // Increase height to 200px
+                opacity: '0.5'    // Reduce opacity to 50%
+            }, 2000);             // Duration of 2 seconds
+        });
+    });
+</script>
+
+</body>
+</html>

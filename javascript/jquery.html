@@ -48,6 +48,11 @@
     $("#slideDown").click(function(){
         $("p").slideDown();
     });
+    $("#slideToggle").click(function(){    //When an element is visible, slideToggle() hides it with a slide-up effect.
+                                        // When the element is hidden, it shows it with a slide-down effect.
+        $("p").slideToggle();
+    });
+    
 
     $("p").hover(
         function(){
@@ -89,6 +94,7 @@
     <button id="append">Append</button>
     <button id="prepend">Prepend</button>
     <button id="remove">Remove</button>
+    <button id="slideToggle">Slidetoggle</button>
 
     
 </body>

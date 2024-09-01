@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chaining</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #chain{
+            
+            width:100px;
+            height:50px;
+            background-color: red;
+            border:1px solid black;
+            /*display:none; */ 
+
+        }
+    </style>
+</head>
+
+<body>
+   <!-- Method chaining is technique that allows us to run multiple jQuery commands, one after the other, on the same element(s).
+    This makes your code more concise and readable. Chaining is possible because most jQuery methods return the jQuery object itself, allowing you to continue applying methods to it.-->
+    <div id="chain">slide me!</div> <br>
+    <button id="slide">slidechain</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#slide").click(function(){
+                $("#chain").slideUp(2000).slideDown(3000) //.fadeIn(1000);
+
+            });
+        });
+    </script>
+
+    
+</body>
+</html>

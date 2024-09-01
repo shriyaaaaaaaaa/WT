@@ -1,0 +1,61 @@
+<!--JSON (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate.
+ It's commonly used for transmitting data in web applications between a server and a client.
+
+Uses of JSON:
+Data Exchange: JSON is widely used for exchanging data between a server and a client. For example, when you request data from a server using AJAX, the server often responds with JSON data.
+
+Configuration Files: JSON is often used to store configuration settings for applications.
+
+Data Storage: JSON can be used to store data persistently in databases, files, or other storage systems.
+
+APIs: Many web APIs use JSON as the format for sending and receiving data.
+
+JSON Syntax:
+Data is in name/value pairs: "name": "John"
+Curly braces hold objects: {"name": "John", "age": 30}
+Square brackets hold arrays: {"name": "John", "hobbies": ["reading", "traveling"]}-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+<body>
+    <h2>JSON Parsing Example</h2>
+   <p id="output"></p>
+
+<script>
+    // JSON string
+    const jsonString = '{"name": "John", "age": 30, "hobbies": ["reading", "traveling"], "isStudent": false ,"middlename":null}';
+
+    // Parse JSON string into JavaScript object
+    const jsonObject = JSON.parse(jsonString);
+
+    // Accessing the data
+    const output = `
+        Name: ${jsonObject.name} <br>
+        Age: ${jsonObject.age} <br>
+        Hobbies: ${jsonObject.hobbies.join(", ")} <br>
+        Is Student: ${jsonObject.isStudent} <br>
+        Middlename: ${jsonObject.middlename}
+    `;
+
+    // Displaying the parsed data
+    document.getElementById("output").innerHTML = output;   
+</script>
+</body>
+</html>
+
+<!--JSON.parse(jsonString): This method parses the JSON string (jsonString) and converts it into a JavaScript object (jsonObject).
+
+Without join(): ["reading", "traveling"] would be displayed as reading,traveling (without spaces).
+With join(", "): It is displayed as reading, traveling (with a comma and a space between the items).
+
+Why innerHTML?:
+You want to display both the data (Name: ${data.name}, Age: ${data.age}) and HTML structure (e.g., adding <br> for line breaks) inside the <p> element.
+    innerHTML is often used when you want to insert or update HTML content within an element on your webpage.-->

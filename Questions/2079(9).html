@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #mydiv {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 100px; /* Set a starting position */
+            left: 50px; /* Set a starting position */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mydiv"></div>
+    <p>callback function</p>
+    <button id="animatebtn">move right</button>
+    <button id="stop">stop</button>
+    <button id="call">callback</button>
+
+
+    <script>
+      /* 1.animate Syntax:
+$(selector).animate({params},speed,callback);
+The required params parameter defines the CSS properties to be animated.
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after the animation completes. */
+
+$(document).ready(function(){
+  $("#animatebtn").click(function(){
+    $("#mydiv").animate({
+           left: "+=300px" // Move 300px to the right because you are increasing the value of the left property. This moves the element further away from the left edge of its containing element.
+            }, 1000); // Duration of 1 second
+     });
+
+     $("#stop").click(function(){      //The jQuery stop() method is used to stop animations or effects before it is finished.
+        $("#mydiv").stop()
+     });
+
+     $("#call").click(function(){    //$(selector).hide(speed,callback); for callback:A callback function is executed after the current effect is finished.
+        $("p").hide("slow", function(){
+        alert("The paragraph is now hidden");
+        });
+});
+});
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form and form validation</title>
+</head>
+<style>
+    form{
+        border:2px solid black;
+        width:500px;
+        height:200px;
+        display: inline-block; /*to wrap form properly*/
+        padding:20px;  /*border nachos*/
+    }  
+    .submit-button{
+        margin-left: 50px;
+    }
+    .label {
+    font-weight: bold;
+    }
+    .radio-button {
+        margin-left:20px;
+    }
+
+    .radio-label {
+        font-style: italic;
+    }
+   
+</style>
+
+<script type="text/javascript">
+       function validateform(event){
+        event.preventDefault();
+
+        var name=username();
+        var pass=password();
+        var con=country();
+        var gen=gender();
+
+        if(name && pass && con && gen){
+            alert("form is valid and ready to be submitted");
+        }
+       }
+
+       function username(){
+        var name=document.getElementById("username").value;
+        var minlen=4;
+        if(name.length<minlen){
+            alert("username should be atleast 4 char!");
+            document.getElementById("username").focus();
+            return false;
+        }
+        return true;
+       }
+       function password(){
+        var password=document.getElementById("password").value;
+        var patt=/^[a-zA-Z].*#$/; // Starts with a letter and ends with #   . 
+        if(!password.match(patt)){
+            alert("password should start with character and end with #");
+            document.getElementById("password").focus();
+            return false;
+        }
+        return true;
+       }
+       function country(){
+        var country=document.getElementById("country");
+        if(country.selectedIndex==-1){  //check if country is selected. halka mistake cha because nepal index 0 ma cha so 0 milena -1 rakheko
+            alert("Please select a country.");
+            document.getElementById("country").focus();
+            return false;
+        }
+        return true;
+       }
+
+       function gender(){
+        var gender=document.querySelectorAll("input[name='gender']:checked");
+        if(gender.length==0){  //check gender is checked
+            alert("select a gender");
+            return false;
+        }
+        return true;
+       }
+</script>
+
+<body>
+    
+<!--or use div id=form-container around the font-->
+<form >
+ <br>   
+<label for="username" class="label">Username </label>
+<input type="text" id="username" name="username"> <br><br>
+
+<label for="password">Password </label>
+<input type="password" id="password" name="password"> <br><br>
+
+<label for="country">country</label>
+<select id="country" name="country">
+    <option value="Nepal">Nepal</option>
+    <option value="India">India</option>
+    <option value="newzealand">newzealand</option>
+</select> <br><br>
+
+<label for="gender">Gender</label>
+<input type="radio" id="male" name="gender" value="male" class="radio-button">
+<label for="male" class="radio-label">M</label> 
+
+<input type="radio" id="female" name="gender" value="female" class="radio-button">
+<label for="female" class="radio-label">F</label> <br><br>
+
+<input type="submit" class="submit-button" value="submit" onclick="validateform(event)">
+
+</form>
+
+
+
+</body>
+</html>

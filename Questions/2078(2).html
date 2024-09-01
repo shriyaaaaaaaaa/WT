@@ -59,7 +59,7 @@
     }
     function password(){
         var minlen=6
-        var reg=/^[a-zA-Z][a-zA-Z0-9]*[0-9]$/;
+        var reg=/^[a-zA-Z][a-zA-Z0-9]*[0-9]$/;     //var patt = /^[a-zA-Z].*[0-9]$/; // Starts with a letter and ends with a digit
         var password = document.getElementById("password").value;
         if (password.length === 0) {
                 alert("Password is a required field!");
