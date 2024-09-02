@@ -1,0 +1,43 @@
+<!--XML FILE-->
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="bookstyle1.xsl"?>
+<books>
+    <heading>welcome to my lib</heading>
+    <book>
+        <title>the idiot</title>
+        <author>fyodor dostoevsky</author>
+        <price>1000</price>
+    </book>
+    <book>
+        <title>norwegian wood</title>
+        <author>haruki murakami</author>
+        <price>500</price>
+    </book>
+
+</books>
+
+<!--XSL FILE-->
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/"> <!-- This template is applied to the root node of the XML document -->
+        <html>
+            <body>
+                <h2><xsl:value-of select="/books/heading"/></h2> <!-- Extracts and displays the heading -->
+                <table border="1"> <!-- Creates an HTML table with a border -->
+                    <tr>
+                        <th>title</th> <!-- Table header for book titles -->
+                        <th>author</th> <!-- Table header for authors -->
+                        <th>price</th> <!-- Table header for prices -->
+                    </tr>
+                    <xsl:for-each select="/books/book"> <!-- Loops through each <book> element -->
+                        <tr>
+                            <td><xsl:value-of select="title"/></td> <!-- Displays the title in a table cell -->
+                            <td><xsl:value-of select="author"/></td> <!-- Displays the author in a table cell -->
+                            <td><xsl:value-of select="price"/></td> <!-- Displays the price in a table cell -->
+                        </tr>
+                    </xsl:for-each>
+                </table>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>

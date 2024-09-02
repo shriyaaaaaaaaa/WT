@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses>
+    <course category="JAVA">
+        <title lang="en">learn java in 3 month</title>
+        <year>2005</year>
+        <price>$200</price>
+    </course>
+
+    <course category="C">
+        <title lang="en">learn c in 3 month</title>
+        <year>2009</year>
+        <price>$500</price>
+    </course>
+
+    <course category="JS">
+        <title lang="en">learn JS in 3 month</title>
+        <year>2010</year>
+        <price>$900</price>
+    </course>
+</courses>
+
+
+<!--Xquery-->
+
+for $x in doc("courses.xml")/courses/course  <!--courses bhitra course-->
+return if ($x/price> 300) then $x/title/text()
+else()
+<!--This code will return the title of the courses that have a price greater than $300.-->
+
+
+for $x in doc("courses.xml")/courses/course
+ return if ($x/@category="JAVA") then
+<javacourse>{data($x/title)}</javacourse>   <!--can write text() instead too-->
+else 
+<nonjavacourse>{data($x/title)}</nonjavacourse>
+
+
+<!--this code output:
+<javacourse>learn java in 3 month</javacourse>
+<nonjavacourse>learn c in 3 month</nonjavacourse>
+<nonjavacourse>learn JS in 3 month</nonjavacourse>-->

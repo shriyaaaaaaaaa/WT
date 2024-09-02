@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="name">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstname">
+                    <xs:complexType>
+                        <xs:simpleType>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="full" type="xs:boolean" default="true"/>
+                            </xs:extension>
+                        </xs:simpleType>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="lastname" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="nickname" type="xs:boolean" fixed="true"/>
+            <xs:attribute name="homepage" type="xs:anyURI" use="rrequired"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!--the schema defines an element named "name" with a complex type.
+The "name" element contains a sequence of two elements: "firstname" and "lastname".
+The "firstname" element has a complex type with a simple type extension, which adds an attribute named "full" with a default value of "true".
+The "lastname" element is a simple string type.
+The "name" element also has two attributes: "nickname" with a fixed value of "true", and "homepage" with a type of "xs:anyURI".-->
+
+
+
+
+
+
+<!--Attributes are optional by default. To specify that the attribute is required, use the "use" attribute:
+<xs:attribute name="homepage" type="x:anyURI" use="required"/>
+-->

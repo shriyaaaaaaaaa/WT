@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definition of the complex type for the name element -->
+    <xs:complexType name="nameType">
+        <xs:sequence>
+            <xs:element name="first" type="xs:string"/>
+            <xs:element name="last" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the complex type for the contactDetails element -->
+    <xs:complexType name="contactDetailsType">
+        <xs:sequence>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phone" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the complex type for the address element -->
+    <xs:complexType name="addressType">
+        <xs:sequence>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="state" type="xs:string"/>
+            <xs:element name="postalCode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the employee element -->
+    <xs:complexType name="employeeType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/> <!-- Simple Type -->
+            <xs:element name="name" type="nameType"/> <!-- Complex Type -->
+            <xs:element name="position" type="xs:string"/> <!-- Simple Type -->
+            <xs:element name="contactDetails" type="contactDetailsType"/> <!-- Complex Type -->
+            <xs:element name="address" type="addressType"/> <!-- Complex Type -->
+            <xs:element name="salary" type="xs:decimal"/> <!-- Simple Type -->
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the root element "employees" which contains multiple "employee" elements -->
+    <xs:element name="employees">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="employeeType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+
+
+<!--xml-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://example.com/employees employees.xsd">
+    <employee>
+        <id>001</id>
+        <name>
+            <first>John</first>
+            <last>Doe</last>
+        </name>
+        <position>Manager</position>
+        <contactDetails>
+            <email>john.doe@example.com</email>
+            <phone>+1-234-567-8901</phone>
+        </contactDetails>
+        <address>
+            <street>123 Elm Street</street>
+            <city>Springfield</city>
+            <state>IL</state>
+            <postalCode>62701</postalCode>
+        </address>
+        <salary>75000</salary>
+    </employee>
+    <!-- Additional employee records here -->
+</employees>

@@ -1,0 +1,39 @@
+<!--XML file-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="studentstyle.xsl"?>
+<student>
+    <name>Ram</name>
+    <Roll>01</Roll>
+</student>
+
+<!--XSLT file-->
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <html>
+            <body>
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll</th>
+                    </tr>
+                    <tr>
+                        <td><xsl:value-of select="/student/name"/></td>
+                        <td><xsl:value-of select="/student/Roll"/></td>
+                    </tr>
+                </table>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
+
+
+<!--Instead of looping over the <student> element (which would be necessary if there were multiple students),
+     you simply create a single row (<tr>) in the table and populate it with the values from the XML document.
+
+
+    The xsl:for-each element is designed to iterate over a set of nodes,
+     but in your XML document, the <student> element is not a collection of multiple nodes—it's just a single element. 
+        As a result, the loop doesn’t actually iterate, leading to no output within the table.
+-->

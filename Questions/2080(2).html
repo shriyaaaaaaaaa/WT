@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Define the Person element -->
+    <xs:element name="person">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Age" type="agetype"/>
+                <xs:element name="Name" type="nametype"/>
+                <xs:element name="Pincode" type="pincodetype"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define the AgeType -->
+    <xs:simpleType name="agetype">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="10"/>
+            <xs:maxInclusive value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Define the NameType -->
+    <xs:simpleType name="nametype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ram"/>
+            <xs:enumeration value="Shyam"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Define the PincodeType -->
+    <xs:simpleType name="pincodetype">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}"/>   <!--or [0-9]{3}-->
+        </xs:restriction>
+    </xs:simpleType>    <!--single person lai ho bhane yettima siddincha-->
+
+    <!-- Define the root element which can contain multiple person elements -->
+    <xs:element name="persons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="PersonType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define the PersonType complex type -->
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element name="Age" type="agetype"/>
+            <xs:element name="Name" type="nametype"/>
+            <xs:element name="Pincode" type="pincodetype"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
+
+
+
+
+
+
+<!--or use
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Persons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Person" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Age" type="xs:integer">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="10"/>
+                                        <xs:maxInclusive value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Name" type="xs:string">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Ram"/>
+                                        <xs:enumeration value="Shyam"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Pincode" type="xs:string">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="\d{3}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+-->

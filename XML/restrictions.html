@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--1)restriction on values-->
+    <xs:element name="age">            <!--defines element age with restriction:value cant be lower than 0 and greater than 20-->
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="120"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--2) restrictions on set of values:use enumeration constraint-->
+    <xs:element name="car">
+        <xs:simpleType>                        <!--only acceptable values are audi and volvo-->
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="audi"/>
+                <xs:enumeration value="volvo"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--3)restriction on series of values(n0. or letters): use pattern constraint-->
+    <xs:element name="letter">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-z]"/>   <!--only acceptable value is ONE of lowercase letter from a-z-->
+                <xs:pattern value="[0-8]"/>
+                <xs:pattern value="[A-Z][A-Z][A-Z]"/> <!--only acceptable value is THREE of capital letters from a to z-->
+                <xs:pattern value="[xyz]"/> <!--ONE of x,y,z is acceptable-->
+                <xs:pattern value="[0-9][0-9][0-9]"/> <!--acceptable value is 3 digits in seq, each dig should range from 0 to 9-->
+                
+                <xs:whiteSpace value="preserve"/> <!--wont remove any whitespace char-->
+                <xs:whiiteSpace value="replace"/> <!--replaces all whitespace char(line feeds, tabs, ) with spaces-->
+                <xs:whiteSpace  value="collapse"/><!--removes all whitespace char: leading/trailing space removed,multiple spaces reduced to single space-->
+
+                <xs:length value="8"/>  <!--value must be of exactly 8 char-->
+                <xs:minLength value="5"/>
+                <xs:maxLength value="9"/>
+
+
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+
+</xs:schema>

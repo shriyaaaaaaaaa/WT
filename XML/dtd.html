@@ -1,0 +1,97 @@
+<!--internal dtd-->
+
+
+<?xml version="1.0" standalone="yes"?>   <!-- standalone is yes in internal DTD -->
+<!DOCTYPE tutorials [
+    <!ELEMENT tutorials (tutorial+)> <!-- tutorials contains one or more tutorial elements -->
+    <!ELEMENT tutorial (title, description, url)> <!-- tutorial contains title, description, and url elements -->
+    <!ELEMENT title (#PCDATA)> <!-- title contains parsed character data (plaintext) -->
+    <!ELEMENT description (#PCDATA)> <!-- description contains parsed character data (text) -->
+    <!ELEMENT url (#PCDATA)> <!-- url contains parsed character data (text) -->
+    <!ATTLIST tutorials type CDATA #REQUIRED > <!-- tutorials has a required attribute named 'type' which is of character  data type -->
+]>
+
+<tutorials type="web">
+    <tutorial>
+        <title>HTML Tutorial</title>
+        <description>This tutorial covers HTML basics</description>
+        <url>https://www.sthg.com/html/tutorial</url> 
+    </tutorial>
+    <tutorial>
+        <title>XML Tutorial</title>
+        <description>This tutorial covers XML basics</description>
+        <url>https://www.some.com/xml/tutorial</url> 
+    </tutorial>
+</tutorials>
+
+
+<!--external dtd:to use we need to link it from xml doc by providing uri of dtd file-->
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE tutorials SYSTEM "tutorials.dtd"> <!--SYSTEM keyword indicates that its a private dtd-->
+<!--DOCTYPE rootname PUBLIC indetifier URL>  for pubic dtd-->
+
+<tutorials type="web">
+    <tutorial>
+        <title>HTML Tutorial</title>
+        <description>This tutorial covers HTML basics</description>
+        <url>https://www.sthg.com/html/tutorial</url> 
+    </tutorial>
+    <tutorial>
+        <title>XML Tutorial</title>
+        <description>This tutorial covers XML basics</description>
+        <url>https://www.some.com/xml/tutorial</url> 
+    </tutorial>
+</tutorials>
+
+<!--heres what external dtd that is tutorials.dtd looks like. we dont need doctype declaration as it is already in xml file-->
+
+    <!ELEMENT tutorials (tutorial+)>  <!-- tutorials should contain one or more tutorial elements -->
+    <!ELEMENT tutorial (title, description, url)> 
+    <!ELEMENT title (#PCDATA)> 
+    <!ELEMENT description (#PCDATA)> 
+    <!ELEMENT url (#PCDATA)> 
+    <!ATTLIST tutorials type CDATA #REQUIRED >
+
+
+    <!--mixed dtd-->
+
+
+
+    <?xml version="1.0" standalone="no"?>
+     <!DOCTYPE tutorials SYSTEM "tutorials.dtd" [
+    <!ELEMENT tutorial (title, description, url, summary)>
+    <!ELEMENT summary (#PCDATA)>
+]>
+
+<tutorials>
+    <tutorial>
+        <title>HTML Tutorial</title>
+        <description>This tutorial covers HTML basics</description>
+        <url>https://www.sthg.com/html/tutorial</url> 
+        <summary>Defined a new element summary that has not been defined in external DTD</summary>
+    </tutorial>
+    <tutorial>
+        <title>XML Tutorial</title>
+        <description>This tutorial covers XML basics</description>
+        <url>https://www.some.com/xml/tutorial</url> 
+        <summary>So we define it internally. We rely on external resources, so standalone is 'no'.</summary>
+    </tutorial>
+</tutorials>
+
+
+
+
+
+
+<!--   dtd elements
+
+<!ELEMENTS elementname(childelement1,childelement2,...)> =to contain more than one element.
+
+<!ELEMENT elementname ANY>    = This DTD declaration specifies that the element element_name can contain any type of content. 
+                                This means it can include child elements, text, and other mixed content.
+                                 It gives maximum flexibility in terms of what can be included inside the element.
+                                 removes all syntax checking so avoid using.
+
+<!ELEMENT elementname EMPTY>  =  EMPTY keyword is used to define elements that should not contain any content, enforcing that the element is self-closing in the XML document.
+                                 This is often used for elements like line breaks, image tags, or any other non-container elements.
+-->

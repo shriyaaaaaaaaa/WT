@@ -65,7 +65,7 @@
        }
        function country(){
         var country=document.getElementById("country");
-        if(country.selectedIndex==-1){  //check if country is selected. halka mistake cha because nepal index 0 ma cha so 0 milena -1 rakheko
+        if(country.selectedIndex==-1){  //check if country is selected. because nepal index 0 ma cha so 0 milena -1 rakheko
             alert("Please select a country.");
             document.getElementById("country").focus();
             return false;
@@ -96,6 +96,7 @@
 
 <label for="country">country</label>
 <select id="country" name="country">
+    <!--<option value="">Nepal</option>-->
     <option value="Nepal">Nepal</option>
     <option value="India">India</option>
     <option value="newzealand">newzealand</option>
@@ -116,3 +117,7 @@
 
 </body>
 </html>
+
+<!--When a form is submitted, the browser will typically reload the page and send the form data to the server. By calling event.preventDefault(), you're telling the browser to stop this default behavior from happening.
+
+This is useful when you want to validate the form data on the client-side before submitting it to the server, -->
