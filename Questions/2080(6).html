@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Example</title>
+</head>
+<body>
+
+    <h1>Title 1</h1>
+    <h1>Title 2</h1>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <div>This is a div element.</div>
+
+    <script>
+        // Access and display <h1> elements
+        const headings = document.getElementsByTagName("h1");
+        document.write("<h2>H1 Elements:</h2>");
+        document.write("<ul>");
+        for (let i = 0; i < headings.length; i++) {
+            document.write("<li>" + headings[i].innerText + "</li>");
+        }
+        document.write("</ul>");
+
+        // Access and display <p> elements
+        const paragraphs = document.getElementsByTagName("p");
+        document.write("<h2>P Elements:</h2>");
+        document.write("<ul>");
+        for (let i = 0; i < paragraphs.length; i++) {
+            document.write("<li>" + paragraphs[i].innerText + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+
+</body>
+</html>
+
+
+<!--Access Elements: getElementsByTagName("h1") and getElementsByTagName("p") fetch all <h1> and <p> elements.
+    Write to Document:
+    document.write("<h2>H1 Elements:</h2>"); writes a heading for the <h1> elements.
+    document.write("<ul>"); starts an unordered list.
+    for loop iterates over <h1> elements, writing each one into a list item with innerText.
+    Same process is followed for <p> elements.
+        This script writes the list of <h1> and <p> elements directly into the HTML document, displaying them as unordered lists.-->

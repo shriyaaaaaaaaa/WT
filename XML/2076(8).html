@@ -77,3 +77,27 @@
     </employee>
     <!-- Additional employee records here -->
 </employees>
+
+
+
+<!--dtd-->
+<!-- Definition of the elements -->
+
+<!ELEMENT employees (employee+)>   <!-- + means allow one or more child of same element. 1 ota bhanda badi employee huna-->
+<!ELEMENT employee (id, name, position, contactDetails, address, salary)>
+<!ELEMENT name (first, last)>
+<!ELEMENT contactDetails (email, phone)>
+<!ELEMENT address (street, city, state, postalCode)>
+
+<!-- Definition of the individual fields as elements -->
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT last (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT postalCode (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>

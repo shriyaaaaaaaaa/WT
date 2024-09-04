@@ -1,0 +1,52 @@
+<!--dtd-->
+<!ELEMENT PhoneNmbers(#PCDATA | titles | entries)*> <!--This declares the PhoneNmbers element, which can contain a mix of (#PCDATA), titles, and entries elements in any order, and it can have zero or more occurrences of these elements (*).-->
+<!ELEMENT titles (#PCDATA)><!--element titles can only have text content-->
+<!ELEMENT entries(entry*)> <!--alllow zero or more element of child element(entry)-->
+<!ELEMENT entry(name,phone+,city?)> <!-- ? allow zero or one of same child element/ + one or more of child element-->
+<!ELEMENT name (middlename| firstname | lastname)> <!--choice: you can choose any one of these child.| denotes a choice between these elements -->
+<!ELEMENT  middlename(#PCDATA)>
+<!ELEMENT  firstname(#PCDATA)>
+<!ELEMENT  lastname(#PCDATA)>
+<!ELEMENT phone(#PCDATA)>
+<!ELEMENT city(#PCDATA)>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definition of the root element "PhoneNmbers" -->
+    <xs:element name="PhoneNmbers">
+        <xs:complexType mixed="true">  <!--Defined as a complexType with mixed="true", allowing both text and child elements.-->
+            <xs:choice minOccurs="0" maxOccurs="unbounded"> <!--allows any combination of titles and entries elements, repeated zero or more times-->
+                <xs:element name="titles" type="xs:string"/>
+                <xs:element name="entries">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name">
+                                            <xs:complexType>
+                                                <xs:choice>
+                                                    <xs:element name="middlename" type="xs:string"/>
+                                                    <xs:element name="firstname" type="xs:string"/>
+                                                    <xs:element name="lastname" type="xs:string"/>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="phone" type="xs:string" maxOccurs="unbounded"/>
+                                        <xs:element name="city" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+
+
+
