@@ -31,7 +31,30 @@
             echo $j." ".$k."<br>";
     }
 }
-      //for each($array_name as $key=>$data);
+      // class and objects
+      class books{
+        public $title;    //members of class books
+        public $author;
+      }
+      //creating three objects  of books
+      $physics=new books();
+      $chemistry=new books();
+      $biology=new books();
+
+        $physics->title = "Physics Book";
+        $physics->author = "John Doe";
+
+        $chemistry->title = "Chemistry Book";
+        $chemistry->author = "Jane Doe";
+
+        $biology->title = "Biology Book";
+        $biology->author = "Bob Smith";
+
+        // print the values
+        echo $physics->title . " by " . $physics->author . "\n"."<br>";
+        echo $chemistry->title . " by " . $chemistry->author . "\n"."<br>";
+        echo $biology->title . " by " . $biology->author . "\n";
+
     ?>
 </body>
 </html>

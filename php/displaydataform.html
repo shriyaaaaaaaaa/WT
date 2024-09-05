@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data in HTML Table</title>
+</head>
+<body>
+    <h3>Data from Database:</h3>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "mydb";
+
+            // Create connection
+            $conn = mysqli_connect($servername, $username, $password, $database);
+
+            // Check connection
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error() . "<br>");
+            }
+
+            // SQL query to select data from table
+            $sql = "SELECT Id, name, age, gender FROM personal_details";
+            $result = mysqli_query($conn, $sql);
+
+            // Check if there are results
+            if (mysqli_num_rows($result) > 0) {  <!--mysqli_num_rows($result) > 0: This checks if the query returned any rows (i.e., data exists).-->
+
+                // Fetch and display each row of data
+                while ($row = mysqli_fetch_assoc($result)) {  <!--fetches result row as associative array-->
+                    echo '<tr>';
+                    echo '<td>' . htmlspecialchars($row['Id']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['name']) . '</td>';   <!--t's wrapped with htmlspecialchars() to prevent XSS (Cross-Site Scripting) by escaping special HTML characters.-->
+                    echo '<td>' . htmlspecialchars($row['age']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['gender']) . '</td>';
+                    echo '<td><a href="edit.php?id=' . htmlspecialchars($row['Id']) . '">Edit</a></td>';
+                    echo '<td><a href="delete.php?id=' . htmlspecialchars($row['Id']) . '">Delete</a></td>';
+                    echo '</tr>';
+                }
+            } else {
+                echo '<tr><td colspan="6">No data found</td></tr>';  <!--If there are no records in the table, a message is shown in a single table row stating "No data found".-->
+            }
+
+            // Close the connection
+            mysqli_close($conn);
+            ?>
+        </tbody>
+    </table>
+</body>
+</html>
