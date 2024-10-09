@@ -41,18 +41,23 @@
         return true;
     }
     function check() {
-            var checkboxes = document.querySelectorAll("input[name='hobby']");
-            var isHobbyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-            if (!isHobbyChecked) {
-                alert("At least one hobby must be selected.");
-                return false;
-            }
-            return true;
-        }
+            
+
+            var checkbox = document.getElementsByName("hobby");
+
+                if (!checkbox[0].checked && !checkbox[1].checked && !checkbox[2].checked) {
+                    alert("Select at least one");
+                    return false;
+                }
+
+                return true;
+    }
+
 
 </script>
 </head>
 <body>
+    <form>
     <label for="username">Username:</label>
     <input type="text" id="username" name="username"> <br><br>
 
@@ -69,6 +74,7 @@
     <br><br>
 
     <input type="submit" onclick="validateForm(event)" value="submit">
+    </form>
 
     
 

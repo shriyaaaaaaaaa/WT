@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 
-//3. for validating number AND integer use FILTER_VALIDATE_FLOAT and FILTER_VALIDATE_INT respectively
+//3. for validating number AND integer use FILTER_VALIDATE_FLOAT and FILTER_VALIDATE_INT respectively.
 ?>
 
 </body>

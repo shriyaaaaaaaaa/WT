@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Description Change</title>
     <style>
-        #image-container {
+        .image-container {
             text-align: center;
             margin-top: 50px;
         }
@@ -31,23 +31,24 @@
             document.getElementById('description').innerText = text;  //Updates the text of the paragraph with the given description.
         }
 
+               document.onmouseout=function(){
+                changeDescription('This is the original description of the image.');
+            
+               }
                //onMouseOver(): Updates the text of the paragraph with the given description.
-        function onMouseOver() {  //
+        document.onmouseover=function(){
             changeDescription('This is the description when the image is hovered.');  
 
         }
-        function onMouseOut() {  //resets the paragraph text when the mouse is no longer over the image
-            changeDescription('This is the original description of the image.');
-        }
+        
     </script>
 </head>
 <body>
-    <div id="image-container">    <!--The <img> tag includes onmouseover and onmouseout event handlers to call JavaScript functions when the mouse interacts with the image.-->
+    <div class="image-container">    <!--The <img> tag includes onmouseover and onmouseout event handlers to call JavaScript functions when the mouse interacts with the image.-->
         <img 
             src="https://via.placeholder.com/300" 
             alt="Sample Image" 
-            onmouseover="onMouseOver()" 
-            onmouseout="onMouseOut()"
+            
         >
         <p id="description">we must include some description. suruma matra huncha yo</p>   <!--The <p> tag with the ID description displays the description text.-->
     </div>

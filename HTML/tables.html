@@ -11,7 +11,7 @@
       </style> <!--this is for setting height to 100% otherwise wont work , we are defining parent element height -->
 </head>
 <body>
-    <table border ="1" width ="40%" height="50%">
+    <table border ="1" width ="40%" height="50%"> <!--if no border then border="0"-->
 
         <thead> <!--creates seperate table header-->
             <tr>
@@ -20,14 +20,14 @@
         </thead>
         <tbody>
         <tr>  <!--creates table row-->
-            <th>First name</th>   <!--table heading-->
-            <th>Last name</th>   <!--table heading-->
-            <th>Roll no</th>
+            <th>First name</th>   <!--table heading-->  <!--first row first column-->
+            <th>Last name</th>   <!--table heading-->   <!--first row second column-->
+            <th>Roll no</th>    <!--th replaces td. and is centred and bold by  default-->
         </tr>
 
         <tr>  
             <td>Shriya</td>   <!--inserting data cells in first row-->
-            <td>khatri</td>
+            <td>khatri</td>   <!--td id regular and left aligned by default-->
             <td>128</td>
         </tr>
 
@@ -40,7 +40,7 @@
 
     <tfoot>
         <tr>
-            <th colspan="4">this is foot of the table</th>
+            <th colspan="3">this is foot of the table</th>
         </tr>
     </tfoot>
     </table>

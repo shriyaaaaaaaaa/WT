@@ -23,16 +23,19 @@
 </head>
 <body>
     <h3>press any key</h3>
-    <div id="message"></div>
+    <div id="message" onkeypress="onkeypressEvent()">press key</div>
+  
 
     <script>
-        function displayMessage()
+        function displayMessage(text)
         {
-            const MessageDiv=document.getElementById('message');
-            MessageDiv.textContent="Hello World ";
+            document.getElementById("message").innerText=text;
         }
-            document.addEventListener('keypress' ,displayMessage);
-        
+        function onkeypressEvent()
+        {
+            displayMessage("hello world onkeypress event");
+
+        }
     </script>
     
 </body>

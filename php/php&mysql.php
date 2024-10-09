@@ -95,7 +95,8 @@
         echo "erorr!" .$sql. "<br>" .mysqli_error($conn);
     }
     mysqli_close($conn);
-
+  
+    //note if only one data insert use mysqli_query.
 
     ?>
 
